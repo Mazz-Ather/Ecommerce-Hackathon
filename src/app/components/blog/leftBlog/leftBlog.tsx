@@ -51,8 +51,8 @@ const BlogPage = () => {
       <div className="lg:flex ">
     <div className='max-w-[1200px] mx-auto w-[60%]'>
       <div>
-        {blogPostData.map((item) => {
-            return <div>
+        {blogPostData.map((item , index) => {
+            return <div key={index}>
                 <div>
                     <div>
                         <img src={item.img} alt="" />

@@ -59,7 +59,7 @@ const LoginPage: React.FC = () => {
 
         {/* Footer */}
         <p className="mt-4 text-sm text-center text-gray-600">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link href="/pages/sign-up" className="hover:text-pink-500 hover:underline">
             Create Account
           </Link>

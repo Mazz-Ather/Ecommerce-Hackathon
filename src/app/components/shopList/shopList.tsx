@@ -7,6 +7,7 @@ import Link from 'next/link'
 
 const shopListData = [
     {
+        id: 1,
         img: "/sl1.png",
         title: "Accumsan tincidunt",
         offerPrice: "$26.00",
@@ -15,6 +16,7 @@ const shopListData = [
         des: "ng Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.o.",
     },
     {
+        id: 2,
         img: "/sl2.png",
         title: "In nulla",
         offerPrice: "$26.00",
@@ -23,6 +25,7 @@ const shopListData = [
         des: "Long Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.o.",
     },
     {
+        id: 3,
         img: "/sl3.png",
         title: "Vel sem",
         offerPrice: "$26.00",
@@ -31,6 +34,7 @@ const shopListData = [
         des: "Loorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites.",
     },
     {
+        id: 4,
             img: "/sl4.png",
         title: "Porttitor cum",
         offerPrice: "$26.00",
@@ -39,6 +43,7 @@ const shopListData = [
         des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     },
     {
+        id: 5,
         img: "/sl5.png",
         title: "Nunc in",
         offerPrice: "$26.00",
@@ -47,6 +52,7 @@ const shopListData = [
         des: "Lororem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sitesto.",
     },
     {
+        id: 6,
         img: "/sl6.png",
         title: "Vitae facilisis",
         offerPrice: "$26.00",
@@ -55,6 +61,7 @@ const shopListData = [
         des: "Lo a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typsto.",
     },
     {
+        id: 7,
         img: "/sl7.png",
         title: "Curabitur lectus",
         offerPrice: "$26.00",
@@ -102,27 +109,27 @@ const ShopList = () => {
 
         <div className="md:container md:px-[1.3rem] px-[.8rem] pt-12 md:pt-[98px] flex items-center justify-between max-w-[1540px] mx-auto lg:ml-16">
           <div className=''>
-              <h2 className='text-navy text-[28px] lg:text-[30px] 2xl:text-[34px]'>Ecommerce Acceories & Fashion item</h2>
-              <h4 className='text-extralight font-lato'>About 9,620 results (0.62 seconds)</h4>
+              <h2 className='text-indigo-500 text-[28px] lg:text-[30px] 2xl:text-[34px]'>Ecommerce Acceories & Fashion item</h2>
+              <h4 className='text-extralight'>About 9,620 results (0.62 seconds)</h4>
           </div>
           <div className='hidden lg:block'>
                 <div className='flex gap-9 '>
                     <div className='flex gap-2'>
-                        <h3 className='text-navy font-normal'>Per Page: </h3>
-                        <h3 className='border rounded-sm border-primary py-4 px-8' ></h3>
+                        <h3 className='text-indigo-500 font-normal'>Per Page: </h3>
+                        <h3 className='border rounded-sm border-indigo-400 py-4 px-8' ></h3>
                     </div>
                     <div className='flex gap-2'>
-                        <h3 className='text-navy font-normal'>Sort By: </h3>
+                        <h3 className='text-indigo-500 font-normal'>Sort By: </h3>
                         <h4 className='text-extralight   border rounded-sm border-primary py-1 px-3 font-lato flex items-center gap-1'>Best Match <span><BsChevronDown/></span></h4>
                     </div>
                     <div className='flex gap-8'>
                     <div className='flex items-center gap-2'>
-                        <h3 className='text-navy font-normal'>View:</h3>
-                        <FaListUl className='text-navy'/>
-                        <BsFillGridFill className='text-navy'/>
+                        <h3 className='text-indigo-500 font-normal'>View:</h3>
+                        <FaListUl className='text-indigo-500'/>
+                        <BsFillGridFill className='text-indigo-500'/>
                     </div> 
                     <div>
-                        <h3 className='border rounded-sm border-primary py-4 px-20' ></h3>
+                        <h3 className='border rounded-sm border-indigo-400 py-4 px-8' ></h3>
                     </div>
                     </div>
 
@@ -132,7 +139,7 @@ const ShopList = () => {
 
         <div className='md:container md:px-[1.3rem] px-[.8rem] md:mt-24 mt-6'>
             {shopListData.map((item) => {
-                return <div className=' mb-8'>
+                return <div key={item.id} className=' mb-8'>
                     <div className=' md:flex gap-6 boxShadow p-2 md:p-6 items-center '>
                         <div>
                             <img src={item.img} alt="" />
@@ -140,7 +147,7 @@ const ShopList = () => {
 
                         <div>
                             <div className='flex items-center gap-4'>
-                                <h3 className='text-navy'>{item.title}</h3>
+                                <h3 className='text-indigo-500'>{item.title}</h3>
                                 <div className='my-3 flex justify-center '>
                                     <div className="flex h-3 md:w-[80px]  gap-2">
                                         <div className="h-3 w-3 rounded-full bg-yellow"></div>
@@ -151,15 +158,15 @@ const ShopList = () => {
                             </div>
 
                             <div className='flex items-center gap-3'>
-                                <h4 className='text-navy'>{item.offerPrice}</h4>
+                                <h4 className='text-indigo-500'>{item.offerPrice}</h4>
                                 <h4 className='text-pink line-through'>{item.regularPrice}</h4>
                                 <img src={item.review} alt="" />
                             </div>
-                            <p className='mt-3 md:w-[70%] text-tertiary'>{item.des}</p>
+                            <p className='mt-3 md:w-[70%] text-indigo-300'>{item.des}</p>
                             <div className='flex items-center gap-4 '>
-                                {listIcon.map((item) => {
-                                    return <div className='flext justify-center mt-6 bg-white rounded-full p-4 shadow-2xl '>
-                                        <Link href=''  className='text-xl text-navy'>
+                                {listIcon.map((item, index) => {
+                                    return <div key={index} className='flext justify-center mt-6 bg-white rounded-full p-4 shadow-2xl '>
+                                        <Link href=''  className='text-xl text-indigo-500'>
                                        {item.icon}
                                         </Link>
                                     </div>

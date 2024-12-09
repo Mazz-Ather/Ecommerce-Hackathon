@@ -106,8 +106,8 @@ const RightBlog = () => {
       <div>
           <h3 className='text-[22px] text-[#151875] mt-12 font-semibold'>Recent Post</h3>
           <div>
-            {recentPostData.map((item) => {
-              return <div className='flex items-center gap-3 my-6'>
+            {recentPostData.map((item , index) => {
+              return <div key={index} className='flex items-center gap-3 my-6'>
                 <div>
                   <img src={item.img} alt="" />
                 </div>
@@ -124,8 +124,8 @@ const RightBlog = () => {
       <div>
           <h3 className='text-[22px] text-[#151875] mt-12 font-josefin'>Sale Product</h3>
           <div>
-            {saleProductData.map((item) => {
-              return <div className='flex items-center gap-3 my-6'>
+            {saleProductData.map((item , index) => {
+              return <div key={index} className='flex items-center gap-3 my-6'>
                     <div>
                       <img src={item.img} alt="" />
                     </div>
@@ -143,8 +143,8 @@ const RightBlog = () => {
           <h3 className='text-[22px] text-[#151875] mt-12 font-semibold py-8'>Offer Product</h3>
 
           <div className='grid grid-cols-2 '>
-            {offerProductData.map((item) => {
-              return <div className='mb-6'>
+            {offerProductData.map((item , index) => {
+              return <div key={index} className='mb-6'>
                 <div className='flex justify-between  text-center'>
                   <div>
                     <img src={item.img} alt="" />

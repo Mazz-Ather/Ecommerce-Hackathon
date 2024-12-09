@@ -276,8 +276,8 @@ const ShopLeft = () => {
                         <h3 className='text-[#151875] underline underline-offset-4 font-weight-[500] pb-4 text-xl font-bold'>Product Brand</h3>
 
                         <div>
-                            {filterData.map((item) => {
-                                return <div>
+                            {filterData.map((item , index) => {
+                                return <div key={index}>
                                     <div className='flex items-center gap-3 py-1'>
                                         <input className='bg-[#2f2fd3] text-indigo-500 border-none' type="checkbox"/>
                                         <h4 className='text-[#4649a3] font-medium'>{item.title}</h4>
@@ -291,8 +291,8 @@ const ShopLeft = () => {
                         <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Discount Offer</h3>
 
                         <div>
-                            {discountData.map((item) => {
-                                return <div>
+                            {discountData.map((item , index) => {
+                                return <div key={index}>
                                     <div className='flex items-center gap-3 py-1'>
                                         <input className='bg-light_pink text-pink border-none' type="checkbox"/>
                                         <h4 className='text-[#4649a3] font-medium'>{item.title}</h4>
@@ -332,8 +332,8 @@ const ShopLeft = () => {
                         <div className='mt-12'>
                             <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Categories</h3>
                             <div>
-                                {categoriesData.map((item) => {
-                                    return <div>
+                                {categoriesData.map((item , index) => {
+                                    return <div key={index}>
                                         <div className='flex items-center gap-3 py-1'>
                                             <input className='bg-pink-500 text-pink-500 border-none' type="checkbox"/>
                                             <h4 className='text-[#4649a3] font-medium'>{item.title}</h4>
@@ -346,8 +346,8 @@ const ShopLeft = () => {
                         <div className='mt-12'>
                             <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Price Filter</h3>
                             <div>
-                                {priceData.map((item) => {
-                                    return <div>
+                                {priceData.map((item , index) => {
+                                    return <div key={index}>
                                         <div className='flex items-center gap-3 py-1'>
                                             <input className='bg-pink-500 text-pink-500 border-none' type="checkbox"/>
                                             <h4 className='text-[#4649a3] font-medium'>{item.title}</h4>
@@ -371,8 +371,8 @@ const ShopLeft = () => {
                         <div className='mt-12 mb-12'>
                             <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Filter By Color</h3>
                             <div className='grid grid-cols-3 gap-4'>
-                                {colorName.map((item) => {
-                                    return <div className='flex items-center gap-1'>
+                                {colorName.map((item , index) => {
+                                    return <div key={index} className='flex items-center gap-1'>
                                         <div>
                                             <h4>
                                                 <img src={item.color} alt="" />
@@ -392,8 +392,8 @@ const ShopLeft = () => {
                 </div>
 
                 <div className=' md:ml11 lg:ml-32 '>
-                    {shopLeftData.map((item) => {
-                        return <div className=' mb-8'>
+                    {shopLeftData.map((item , index) => {
+                        return <div key={index} className=' mb-8'>
                             <div className=' md:flex gap-6 boxShadow p-6 items-center '>
                                 <div>
                                     <img src={item.img} alt="" />
@@ -424,8 +424,8 @@ const ShopLeft = () => {
 </div>
                                     <p className='mt-3 md:w-[70%] text-gray-500'>{item.des}</p>
                                     <div className='flex items-center gap-4 '>
-                                        {leftIcon.map((item) => {
-                                            return <div className='flext justify-center mt-6 bg-white rounded-full p-4 shadow-2xl '>
+                                        {leftIcon.map((item , index) => {
+                                            return <div key={index} className='flext justify-center mt-6 bg-white rounded-full p-4 shadow-2xl '>
                                                 <Link href=''  className='text-xl text-[#3438a4]'>
                                                  {item.icon}
                                                 </Link>
