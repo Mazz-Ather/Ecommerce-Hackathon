@@ -35,7 +35,7 @@ const Navbar = ({ cartItems }: any) => {
           {/* Left Section */}
           <div className="flex items-center lg:ml-36">
             <Link href="/" className="font-bold text-xl tracking-tight text-gray-900 m-4">
-             <img src="/hekto.png" alt="logo" />
+            <h1 className='text-black text-2xl font-bold'>HEKTO</h1>
             </Link>
           </div>
 
