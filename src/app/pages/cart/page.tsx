@@ -66,7 +66,7 @@ const AddToCartPage = () => {
             Home
           </Link>
           <span>.</span>
-          <Link href="/pages/cart" className="hover:text-gray-900 font-semibold">
+          <Link href="/pages" className="hover:text-gray-900 font-semibold">
             Pages
           </Link>
           <span>.</span>
@@ -133,7 +133,9 @@ const AddToCartPage = () => {
             <input type="checkbox" className="mr-2" />
             <span>Agree to terms</span>
           </div>
-          <button className="bg-green-500 text-white w-full py-2 mt-4">Checkout</button>
+          <button className="bg-green-500 text-white w-full py-2 mt-4">
+            <Link href="/pages/checkout">Checkout</Link>
+          </button>
         </div>
 
         {/* Second Cart Card */}

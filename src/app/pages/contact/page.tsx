@@ -14,7 +14,7 @@ const Contact = () => {
             Home
           </Link>
           <span>.</span>
-          <Link href="/" className="hover:text-gray-900 font-semibold">
+          <Link href="/pages" className="hover:text-gray-900 font-semibold">
             pages
           </Link>
           <span>.</span>
@@ -76,7 +76,7 @@ const Contact = () => {
           </div>
           <input type="email" placeholder="Email" className="border border-[#151875] rounded p-2 mb-4 w-full" />
           <textarea placeholder="Your Message" className="border border-[#151875] rounded p-2 mb-4 w-full h-32"></textarea>
-          <button className="bg-[#F24E1E] text-white rounded p-2">Send Mail</button>
+          <button className="bg-[#F24E1E] text-white rounded p-2 px-5 py-3">Send Mail</button>
         </div>
 
         {/* Right Side */}

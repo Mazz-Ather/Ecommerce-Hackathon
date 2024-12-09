@@ -13,7 +13,7 @@ export default function NotFoundPage() {
             Home
           </Link>
           <span>.</span>
-          <Link href="/" className="hover:text-gray-900 font-semibold">
+          <Link href="/pages" className="hover:text-gray-900 font-semibold">
             pages
           </Link>
           <span>.</span>

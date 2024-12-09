@@ -75,9 +75,9 @@ const Navbar = ({ cartItems }: any) => {
 
               {/* Pages */}
               <Link
-                href="/pages/shop-grid-default"
+                href="/pages"
                 className={`text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === '/pages/shop-grid-default' ? 'text-[#fb2e86]' : ''
+                  pathname === '/pages' ? 'text-[#fb2e86]' : ''
                 }`}
               >
                 Pages
@@ -105,9 +105,9 @@ const Navbar = ({ cartItems }: any) => {
 
               {/* Shop */}
               <Link
-                href="/pages/shop-grid-default"
+                href="/shop"
                 className={`text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === '/pages/shop-grid-default' ? 'text-[#fb2e86]' : ''
+                  pathname === '/shop' ? 'text-[#fb2e86]' : ''
                 }`}
               >
                 Shop
