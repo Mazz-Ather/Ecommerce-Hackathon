@@ -29,7 +29,7 @@ const Navbar = ({ cartItems }: any) => {
   };
 
   return (
-    <nav className="bg-white shadow-md rounded-t-sm max-w-[1550px] mx-auto">
+    <nav className="bg-white shadow-md lg:rounded-t-sm max-w-[1550px] mx-auto">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Left Section */}
