@@ -115,9 +115,9 @@ const Navbar = ({ cartItems }: any) => {
 
               {/* Contact */}
               <Link
-                href="/contact"
+                href="/pages/contact"
                 className={`text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === '/contact' ? 'text-[#fb2e86]' : ''
+                  pathname === '/pages/contact' ? 'text-[#fb2e86]' : ''
                 }`}
               >
                 Contact
