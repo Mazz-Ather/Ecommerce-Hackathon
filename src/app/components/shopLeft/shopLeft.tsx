@@ -70,7 +70,7 @@ const shopLeftData = [
 const ShopLeft = () => {
 
 
-    const leftIcon = [
+    const icon = [
         {
             icon: <CgShoppingCart/>
         },
@@ -217,11 +217,11 @@ const ShopLeft = () => {
 
 
   return (
-    <>
+    <div className='max-w-[1650px] mx-auto'>
         <div className='bg-shade2'>
         <div className="bg-[#fbfbff] h-[286px] max-w-[1750px] mx-auto p-9 pl-52 pt-16 ">
         <h2 className="text-left text-[#151875] text-5xl font-bold mb-8">
-         Shop Left
+         Shop Left Sidebar
         </h2>
         <nav className="flex pl-4 items-center space-x-2 text-sm text-gray-500">
           <Link href="/" className="hover:text-gray-900 font-semibold">
@@ -232,11 +232,11 @@ const ShopLeft = () => {
             Pages
           </Link>
           <span className="h-1 w-1 rounded-full bg-gray-400"></span>
-          <span className="text-[#F24E1E] font-semibold">Shop Left</span>
+          <span className="text-[#F24E1E] font-semibold">Shop Left Sidebar</span>
         </nav>
       </div>
             </div>
-    <div className='max-w-[1650px] mx-auto ml-8 gap-11'>
+    <div className='max-w-[1650px] mx-auto ml-8 gap-11 lg:ml-32'>
 
             <div className="md:container md:px-[1.3rem] px-[.8rem] md:pt-[98px] pt-12 flex items-center justify-between">
             <div className=''>
@@ -247,11 +247,11 @@ const ShopLeft = () => {
                 <div className='flex gap-9 '>
                     <div className='flex gap-2'>
                         <h3 className='text-[#151875] text-base font-normal'>Per Page: </h3>
-                        <h3 className='border rounded-sm border-primary py-4 px-8' ></h3>
+                        <h3 className='border rounded-sm border-indigo-400 py-4 px-8' ></h3>
                     </div>
                     <div className='flex gap-2'>
                         <h3 className='text-[#151875] text-base font-normal'>Sort By: </h3>
-                        <h4 className='text-gray-500   border rounded-sm border-primary py-1 px-3 font-lato flex items-center gap-1'>Best Match <span><BsChevronDown/></span></h4>
+                        <h4 className='text-[#151875]   border rounded-sm border-primary py-1 px-3  flex items-center gap-1'>Best Match <span><BsChevronDown/></span></h4>
                     </div>
                     <div className='flex gap-8'>
                     <div className='flex items-center gap-2'>
@@ -424,7 +424,7 @@ const ShopLeft = () => {
 </div>
                                     <p className='mt-3 md:w-[70%] text-gray-500'>{item.des}</p>
                                     <div className='flex items-center gap-4 '>
-                                        {leftIcon.map((item , index) => {
+                                        {icon.map((item , index) => {
                                             return <div key={index} className='flext justify-center mt-6 bg-white rounded-full p-4 shadow-2xl '>
                                                 <Link href=''  className='text-xl text-[#3438a4]'>
                                                  {item.icon}
@@ -454,7 +454,7 @@ const ShopLeft = () => {
 
 
     </div>
-    </>
+    </div>
   )
 }
 
