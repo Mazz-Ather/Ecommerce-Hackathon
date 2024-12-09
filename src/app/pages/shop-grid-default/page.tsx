@@ -209,6 +209,12 @@ export default function ShopGrid() {
             <Link href="/pages" className="text-[#151875] hover:text-[#fb2e86]">
               Pages
             </Link>
+            {/* <span className="h-1 w-1 rounded-full bg-gray-400"></span> */}
+            
+            <span className="h-1 w-1 rounded-full bg-gray-400"></span>
+            <Link href="/faq" className="text-[#151875] hover:text-[#fb2e86]">
+              Faq
+            </Link>
             <span className="h-1 w-1 rounded-full bg-gray-400"></span>
             <span className="text-red-600">Shop Grid Default</span>
           </div>

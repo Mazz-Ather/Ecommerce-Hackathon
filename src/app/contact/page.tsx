@@ -21,7 +21,7 @@ const Contact = () => {
           <span className="text-[#F24E1E] font-semibold capitalize">Contact us</span>
         </nav>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto mt-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-20">
 
         {/* Left Section */}
         <div>
@@ -63,7 +63,7 @@ const Contact = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-6xl mx-auto">
         {/* Left Side */}
         <div>
           <h2 className="text-2xl font-bold mb-4 text-[#151875]">Get in Touch</h2>
