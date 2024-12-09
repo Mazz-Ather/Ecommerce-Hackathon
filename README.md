@@ -22,13 +22,13 @@ This is a fully responsive, feature-rich e-commerce website built during a hacka
 4. **Shopex Offers**: 3D hover effects on offer cards.
 5. **Hero Section 2**: A promotional image with CTA.
 6. **Discount Sections**: Products with discount prices and overlay effects.
-7. **Categories & Brands**: Organized sections with animations and hover effects.
-8. **Newsletter & Blog**: Subscription form and blog post grids.
+7. **Categories & Brands**: Organized sections of categories and brands.
+8. **Blog**: Blog post grids with image , author , date , title , paragraph and a read more button.
 
 ### Pages Overview
 - **Contact Page**: Includes a background image, heading, paragraph, and a subscription button.
 - **Shop Pages**: Various layouts like grid, list, sidebar, and detailed views.
-- **FAQ Page**: Accordion-style Q&A with pagination.
+- **FAQ Page**: Accordion-style Q&A sections.
 - **Cart and Checkout Pages**: Interactive and responsive forms for the purchase process.
 
 ## Libraries & Packages Used
@@ -50,3 +50,6 @@ Ensure you have the following installed:
 1. Clone the repository:
    ```bash
    git clone https://github.com/Mazz-Ather/Ecommerce-Hackathon
+   cd Ecommerce-Hackathon
+   npm install
+   npm run dev

@@ -51,8 +51,8 @@ const DemoProduct = () => {
                         <div className='flex items-center justify-between '>
                             <div>
                                 <h4 className='text-[14px] font-semibold'>{item.title}</h4>
-                                <h5 className='text-tertiary'>color:{item.color}</h5>
-                                <h5 className='text-tertiary'>Size:{item.size}</h5>
+                                <h5 className='text-indigo-300'>color:{item.color}</h5>
+                                <h5 className='text-indigo-300'>Size:{item.size}</h5>
                             </div>
                             <div className='w-[160px] text-right'>
                                 <h4>{item.price}</h4>
@@ -85,7 +85,7 @@ const DemoProduct = () => {
                     <div className='md:w-[350px] border-[1px] mt-2'></div>
                 </div>
 
-                <div className='flex items-center mt-7 gap-1 text-tertiary'>
+                <div className='flex items-center mt-7 gap-1 text-indigo-300'>
                     <input className='bg-green-500 text-[#63d048] w-[8px] h-[8px]' type="checkbox" name="" id="" />
                     <h6 className='text-[12px] text-gray-400'>Shipping & taxes calculated at checkout</h6>
                 </div>

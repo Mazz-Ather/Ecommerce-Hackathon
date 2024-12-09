@@ -15,55 +15,48 @@ const shopLeftData = [
         title: "Dictum morbi",
         originalPrice: "$52.00",
         discountPrice: "$26.00",
-        review: "/.png",
-        des: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+        des: "this is a test product for testing the shop left sidebar product design .",
     },
     {
         img: "/sl14.png",
         title: "Sodales sit",
         originalPrice: "$52.00",
         discountPrice: "$26.00",
-        review: "/assets/images/reviews.png",
-        des: "Liodufads dfiuhdfd fisduhf uhuhsd duhsfu duhdf uydusha uihdusif diushfuisd ihfsdnfdk  .",
+        des: "this is a test product for testing the shop left sidebar product design .",
     },
     {
-        img: "/sl15.png",
+        img: "/sl13.png",
         title: "Nibh varius",
         originalPrice: "$52.00",
         discountPrice: "$26.00",
-        review: "/assets/images/reviews.png",
-        des: "Lto azig sds  kjidkas dsdhsaid iuerhef skjdskafnds kjfhdskjfh dfjdifh kjfiosdhff jofsdiofj .",
+        des: "i purchase this product for testing the shop left sidebar product design .",
     },
     {
-        img: "/sl16.png",
+        img: "/s1.jpeg",
         title: "Mauris quis",
         originalPrice: "$52.00",
         discountPrice: "$26.00",
-        review: "/sl1.png",
-        des: "ed humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the L.",
+        des: "i purchase this product for testing the shop left sidebar product design and i am happy with the product and the service as well and i will recommend this product to my friends and family and i will buy this product again.",
     },
     {
-        img: "/sl17.png",
+        img: "/s2.jpeg",
         title: "Morbi sagittis",
         originalPrice: "$52.00",
         discountPrice: "$26.00",
-        review: "/sl11.png",
-        des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+        des: "i purchase this product for testing the shop left sidebar product design and i am happy with the product and the service as well and i will recommend this product to my friends and family and i will buy this product again.",
     },
     {
-        img: "/sl18.png",
+        img: "/s3.jpeg",
         title: "Ultricies venenatis",
         originalPrice: "$52.00",
         discountPrice: "$26.00",
-        review: "/sl11.png",
         des: "LLatin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and o.",
     },
     {
-        img: "/sl19.png",
+        img: "/s13.jpeg",
         title: "Scelerisque dignissim",
         originalPrice: "$52.00",
         discountPrice: "$26.00",
-        review: "/sl11.png",
         des: "ackages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover mano.",
     }, 
 ]
@@ -218,12 +211,12 @@ const ShopLeft = () => {
 
   return (
     <div className='max-w-[1650px] mx-auto'>
-        <div className='bg-shade2'>
-        <div className="bg-[#fbfbff] h-[286px] max-w-[1750px] mx-auto p-9 pl-52 pt-16 ">
+    <div className='bg-shade2'>
+      <div className="bg-[#fbfbff] h-[286px] max-w-[1750px] mx-auto p-9 pl-8 pt-16 md:pl-16">
         <h2 className="text-left text-[#151875] text-5xl font-bold mb-8">
-         Shop Left Sidebar
+          Shop Left Sidebar
         </h2>
-        <nav className="flex pl-4 items-center space-x-2 text-sm text-gray-500">
+        <nav className="flex flex-wrap pl-4 items-center space-x-2 text-sm text-gray-500">
           <Link href="/" className="hover:text-gray-900 font-semibold">
             Home
           </Link>
@@ -235,226 +228,178 @@ const ShopLeft = () => {
           <span className="text-[#F24E1E] font-semibold">Shop Left Sidebar</span>
         </nav>
       </div>
-            </div>
-    <div className='max-w-[1650px] mx-auto ml-8 gap-11 lg:ml-32'>
-
-            <div className="md:container md:px-[1.3rem] px-[.8rem] md:pt-[98px] pt-12 flex items-center justify-between">
-            <div className=''>
-                <h2 className='text-[#151875] text-xl lg:text-3xl font-bold'>Ecommerce Acceories & Fashion item</h2>
-                <h4 className='text-gray-500'>About 9,620 results (0.62 seconds)</h4>
-            </div>
-            <div className='hidden lg:block'>
-                <div className='flex gap-9 '>
-                    <div className='flex gap-2'>
-                        <h3 className='text-[#151875] text-base font-normal'>Per Page: </h3>
-                        <h3 className='border rounded-sm border-indigo-400 py-4 px-8' ></h3>
-                    </div>
-                    <div className='flex gap-2'>
-                        <h3 className='text-[#151875] text-base font-normal'>Sort By: </h3>
-                        <h4 className='text-[#151875]   border rounded-sm border-primary py-1 px-3  flex items-center gap-1'>Best Match <span><BsChevronDown/></span></h4>
-                    </div>
-                    <div className='flex gap-8'>
-                    <div className='flex items-center gap-2'>
-                        <h3 className='text-[#151875] text-base font-normal'>View:</h3>
-                        <FaListUl className='text-[#151875]'/>
-                        <BsFillGridFill className='text-[#151875]'/>
-                    </div> 
-                    <div>
-                        <h3 className='border rounded-sm border-primary py-4 px-20' ></h3>
-                    </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-
-        <div className='md:container md:px-[1.3rem] px-[.8rem] md:flex md:mt-24 mt-6 mb-32'>
-
-                <div className='  w-[350px]'>
-                    <div>
-                        <h3 className='text-[#151875] underline underline-offset-4 font-weight-[500] pb-4 text-xl font-bold'>Product Brand</h3>
-
-                        <div>
-                            {filterData.map((item , index) => {
-                                return <div key={index}>
-                                    <div className='flex items-center gap-3 py-1'>
-                                        <input className='bg-[#2f2fd3] text-indigo-500 border-none' type="checkbox"/>
-                                        <h4 className='text-[#4649a3] font-medium'>{item.title}</h4>
-                                    </div>
-                                </div>
-                            })}
-                        </div>
-                    </div>
-
-                    <div className='mt-12'>
-                        <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Discount Offer</h3>
-
-                        <div>
-                            {discountData.map((item , index) => {
-                                return <div key={index}>
-                                    <div className='flex items-center gap-3 py-1'>
-                                        <input className='bg-light_pink text-pink border-none' type="checkbox"/>
-                                        <h4 className='text-[#4649a3] font-medium'>{item.title}</h4>
-                                    </div>
-                                </div>
-                            })}
-                        </div>
-                    </div>
-
-                    <div className='mt-12'>
-                        <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Rating Item</h3>
-
-                        <div >
-                        {reviewData.map((item, index) => {
-        return (
-            <div key={index}>
-                <div className='flex items-center gap-3 py-1'>
-                    <input className='bg-yellow-500 text-yellow border-none' type="checkbox"/>
-
-                    {/* Display stars */}
-                    <div className='flex'>
-                        {[...Array(5)].map((_, i) => (
-                            <FaStar 
-                                key={i} 
-                                className={`text-${i < item.rating ? 'yellow-500' : 'gray-200'}`} 
-                            />
-                        ))}
-                    </div>
-
-                    <h5 className='text-[#4649a3] font-medium'>{item.count}</h5>
-                                    </div>
-                                </div>
-                            )
-                            })}
-                        </div>
-                        {/* categories */}
-                        <div className='mt-12'>
-                            <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Categories</h3>
-                            <div>
-                                {categoriesData.map((item , index) => {
-                                    return <div key={index}>
-                                        <div className='flex items-center gap-3 py-1'>
-                                            <input className='bg-pink-500 text-pink-500 border-none' type="checkbox"/>
-                                            <h4 className='text-[#4649a3] font-medium'>{item.title}</h4>
-                                        </div>
-                                    </div>
-                                })}
-                            </div>
-                        </div>
-
-                        <div className='mt-12'>
-                            <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Price Filter</h3>
-                            <div>
-                                {priceData.map((item , index) => {
-                                    return <div key={index}>
-                                        <div className='flex items-center gap-3 py-1'>
-                                            <input className='bg-pink-500 text-pink-500 border-none' type="checkbox"/>
-                                            <h4 className='text-[#4649a3] font-medium'>{item.title}</h4>
-                                        </div>
-                                    </div>
-                                })}
-                            </div>
-
-                            <div className=' relative flex items-center mt-6 '>
-                                <div className=''>
-                                    <input className="border-2 border-gray-300  bg-white h-10  justify-between rounded-lg text-sm focus:outline-none -ml-2"
-                                    type="search" name="search" placeholder="$10.00 - 20000$" />
-                                </div>
-                                <div className='absolute right-1/3'>
-                                    <BiSearch className='text-gray-400' />
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* filter by color */}
-                        <div className='mt-12 mb-12'>
-                            <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Filter By Color</h3>
-                            <div className='grid grid-cols-3 gap-4'>
-                                {colorName.map((item , index) => {
-                                    return <div key={index} className='flex items-center gap-1'>
-                                        <div>
-                                            <h4>
-                                                <img src={item.color} alt="" />
-                                            </h4>
-                                        </div>
-
-                                        <div>
-                                            <h4>{item.title}</h4>
-                                        </div>
-                                    </div>
-                                })}
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-
-                <div className=' md:ml11 lg:ml-32 '>
-                    {shopLeftData.map((item , index) => {
-                        return <div key={index} className=' mb-8'>
-                            <div className=' md:flex gap-6 boxShadow p-6 items-center '>
-                                <div>
-                                    <img src={item.img} alt="" />
-                                </div>
-
-                                <div>
-                                    <div className='flex items-center gap-4'>
-                                        <h3 className='text-[#151875] text-lg font-bold'>{item.title}</h3>
-                                        <div className='my-3 flex justify-center '>
-                                            <div className="flex h-3 w-[80px]  gap-2">
-                                                <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-                                                <div className="h-3 w-3 rounded-full bg-pink-500"></div>
-                                                <div className="h-3 w-3 rounded-full bg-blue-500"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                   
-<div className='flex items-center gap-3'>
-  <h4 className='text-[#151875]'>{item.discountPrice}</h4>
-  <h4 className='text-pink-500 line-through'>{item.originalPrice}</h4>
+    </div>
   
-  <div className='flex gap-1'>
-    {[...Array(5)].map((_, i) => (
-      <FaStar key={i} className="text-yellow-500" />
-    ))}
-  </div>
-</div>
-                                    <p className='mt-3 md:w-[70%] text-gray-500'>{item.des}</p>
-                                    <div className='flex items-center gap-4 '>
-                                        {icon.map((item , index) => {
-                                            return <div key={index} className='flext justify-center mt-6 bg-white rounded-full p-4 shadow-2xl '>
-                                                <Link href=''  className='text-xl text-[#3438a4]'>
-                                                 {item.icon}
-                                                </Link>
-                                            </div>
-                                        })}
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    })}
+    <div className='max-w-[1650px] mx-auto px-4 lg:px-8 gap-11 lg:gap-16'>
+      <div className="md:container md:px-[1.3rem] px-[.8rem] md:pt-[98px] pt-12 flex items-center justify-between flex-wrap">
+        <div className='flex flex-col'>
+          <h2 className='text-[#151875] text-xl lg:text-3xl font-bold'>Ecommerce Accessories & Fashion Items</h2>
+          <h4 className='text-gray-500'>About 9,620 results (0.62 seconds)</h4>
+        </div>
+        <div className='hidden lg:flex gap-9'>
+          <div className='flex gap-2'>
+            <h3 className='text-[#151875] text-base font-normal'>Per Page: </h3>
+            <h3 className='border rounded-sm border-indigo-400 py-4 px-8'></h3>
+          </div>
+          <div className='flex gap-2'>
+            <h3 className='text-[#151875] text-base font-normal'>Sort By: </h3>
+            <h4 className='text-[#151875] border rounded-sm border-primary py-1 px-3 flex items-center gap-1'>
+              Best Match <span><BsChevronDown /></span>
+            </h4>
+          </div>
+          <div className='flex gap-8 items-center'>
+            <h3 className='text-[#151875] text-base font-normal'>View:</h3>
+            <FaListUl className='text-[#151875]' />
+            <BsFillGridFill className='text-[#151875]' />
+          </div>
+        </div>
+      </div>
+  
+      <div className='md:container md:px-[1.3rem] px-[.8rem] md:flex md:mt-24 mt-6 mb-32'>
+        <div className='w-full md:w-[350px]'>
+          {/* Product Brand */}
+          <div>
+            <h3 className='text-[#151875] underline underline-offset-4 font-semibold pb-4 text-xl'>Product Brand</h3>
+            <div>
+              {filterData.map((item, index) => (
+                <div key={index} className='flex items-center gap-3 py-1'>
+                  <input className='bg-[#2f2fd3] text-indigo-500 border-none' type="checkbox" />
+                  <h4 className='text-[#4649a3] font-medium'>{item.title}</h4>
                 </div>
-
-
-
-
+              ))}
+            </div>
+          </div>
+  
+          {/* Discount Offer */}
+          <div className='mt-12'>
+            <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Discount Offer</h3>
+            <div>
+              {discountData.map((item, index) => (
+                <div key={index} className='flex items-center gap-3 py-1'>
+                  <input className='bg-light_pink text-pink border-none' type="checkbox" />
+                  <h4 className='text-[#4649a3] font-medium'>{item.title}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
+  
+          {/* Rating Item */}
+          <div className=' mt-12'>
+            <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Rating Item</h3>
+            <div>
+              {reviewData.map((item, index) => (
+                <div key={index} className='flex items-center gap-3 py-1'>
+                  <input className='bg-yellow-500 text-yellow border-none' type="checkbox" />
+                  <div className='flex'>
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar 
+                        key={i} 
+                        className={`text-${i < item.rating ? 'yellow-500' : 'gray-200'}`} 
+                      />
+                    ))}
+                  </div>
+                  <h5 className='text-[#4649a3] font-medium'>{item.count}</h5>
+                </div>
+              ))}
+            </div>
+          </div>
+  
+          {/* Categories */}
+          <div className='mt-12'>
+            <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Categories</h3>
+            <div>
+              {categoriesData.map((item, index) => (
+                <div key={index} className='flex items-center gap-3 py-1'>
+                  <input className='bg-pink-500 text-pink-500 border-none' type="checkbox" />
+                  <h4 className='text-[#4649a3] font-medium'>{item.title}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
+  
+          {/* Price Filter */}
+          <div className='mt-12'>
+            <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Price Filter</h3>
+            <div>
+              {priceData.map((item, index) => (
+                <div key={index} className='flex items-center gap-3 py-1'>
+                  <input className='bg-pink-500 text-pink-500 border-none' type="checkbox" />
+                  <h4 className='text-[#4649a3] font-medium'>{item.title}</h4>
+                </div>
+              ))}
+            </div>
+            <div className='relative flex items-center mt-6'>
+              <input className="border-2 border-gray-300 bg-white h-10 rounded-lg text-sm focus:outline-none" type="search" name="search" placeholder="$10.00 - $200.00" />
+              <div className='absolute right-2'>
+                <BiSearch className='text-gray-400' />
+              </div>
+            </div>
+          </div>
+  
+          {/* Filter by Color */}
+          <div className='mt-12 mb-12'>
+            <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Filter By Color</h3>
+            <div className='grid grid-cols-3 gap-4'>
+              {colorName.map((item, index) => (
+                <div key={index} className='flex items-center gap-1'>
+               <div className='w-5 h-5 bg-indigo-500 rounded-full'></div>
+                  <h4>{item.title}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-
-        <div className='container px-[1.3rem] flex justify-center  my-20'>
-            <img src="/assets/images/logo1.png" alt="" />
+  
+        {/* Product Listings */}
+        <div className='md:ml-8 lg:ml-32 w-full'>
+          {shopLeftData.map((item, index) => (
+            <div key={index} className='mb-8'>
+              <div className='md:flex gap-6 boxShadow p-6 items-center'>
+                <div>
+                  <img src={item.img} alt="" className='w-full h-auto' />
+                </div>
+                <div>
+                  <div className='flex items-center gap-4'>
+                    <h3 className='text-[#151875] text-lg font-bold'>{item.title}</h3>
+                    <div className='my-3 flex justify-center'>
+                      <div className="flex h-3 w-[80px] gap-2">
+                        <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
+                        <div className="h-3 w-3 rounded-full bg-pink-500"></div>
+                        <div className="h-3 w-3 rounded-full bg-blue-500"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='flex items-center gap-3'>
+                    <h4 className='text-[#151875]'>{item.discountPrice}</h4>
+                    <h4 className='text -pink-500 line-through'>{item.originalPrice}</h4>
+                    <div className='flex gap-1'>
+                      {[...Array(5)].map((_, i) => (
+                        <FaStar key={i} className="text-yellow-500" />
+                      ))}
+                    </div>
+                  </div>
+                  <p className='mt-3 md:w-[70%] text-gray-500'>{item.des}</p>
+                  <div className='flex items-center gap-4'>
+                    {icon.map((item, index) => (
+                      <div key={index} className='flex justify-center mt-6 bg-white rounded-full p-4 shadow-2xl'>
+                        <Link href='' className='text-xl text-[#3438a4]'>
+                          {item.icon}
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-
-
-
-
-
+      </div>
+  
+      <div className='container px-[1.3rem] flex justify-center my-20'>
+        <img src="/brand1.png" alt="" />
+      </div>
     </div>
-    </div>
+  </div>
   )
 }
 

@@ -5,28 +5,30 @@ const ShippingInfo = () => {
   return (
     <div>
         
-        <div className='md:mt-20 mt-8 max-w-[1400px] mx-auto ml-16'>
-            <h3 className='text-[#151875] text-2xl font-semibold ml-4 mb-3 mt-4'>Hekto Demo</h3>
-            <nav className="flex pl-4 items-center space-x-1 text-base text-gray-500">
-          <Link href="/cart" className="hover:text-gray-900  text-[#151875] font-semibold">
-           Cart
-          </Link>
-          <span>/</span>
-          <Link href="/information" className="hover:text-gray-900  text-[#151875] font-semibold">
-          information
-          </Link>
-          <span>/</span>
-          <Link href="/shippingInfo" className="hover:text-gray-900  text-[#151875] font-semibold">
-         shipping
-          </Link>
-          <span>/</span>
-          <Link href="/payment" className="hover:text-gray-900  text-[#151875] font-semibold">
-         payment
-          </Link>
+     <div className="md:mt-20 mt-8 max-w-[1400px] mx-auto px-4 md:px-8 lg:ml-32">
+  <h3 className="text-[#151875] text-2xl font-semibold mb-3 mt-4">
+    Hekto Demo
+  </h3>
+  <nav className="flex flex-wrap items-center space-x-1 text-base text-gray-500">
+    <Link href="/cart" className="hover:text-gray-900 text-[#151875] font-semibold">
+      Cart
+    </Link>
+    <span>/</span>
+    <Link href="/information" className="hover:text-gray-900 text-[#151875] font-semibold">
+      Information
+    </Link>
+    <span>/</span>
+    <Link href="/shippingInfo" className="hover:text-gray-900 text-[#151875] font-semibold">
+      Shipping
+    </Link>
+    <span>/</span>
+    <Link href="/payment" className="hover:text-gray-900 text-[#151875] font-semibold">
+      Payment
+    </Link>
+  </nav>
+</div>
 
-          </nav>
-        </div>
-      <div className='mt-11 md:p-8 p-2 pb-16 bg-[#F6F5FF] py-11'>
+      <div className='mt-11 md:p-8 p-2 pb-16 bg-[#F6F5FF] py-11 lg:ml-32'>
 
         <div className='md:flex justify-between'>
             <h3 className='text-[#151875] md:mt-9 text-xl font-semibold'>Contact Information</h3>

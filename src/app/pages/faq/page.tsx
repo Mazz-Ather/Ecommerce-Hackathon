@@ -52,47 +52,53 @@ const FaqPage = () => {
           <span className="text-[#F24E1E] font-semibold capitalize">faq</span>
         </nav>
       </div>
-    <div className="flex flex-row  p-4 max-w-6xl mx-auto mt-20 gap-10 py-11 h-[550px]">
-      <div className="w-1/2">
-        <h2 className="text-3xl font-bold mb-4 text-[#151875]">General Information</h2>
-        {questions.map((item, index) => (
-          <div key={index} className="mb-2 py-3">
-            <button
-              className="w-full text-left p-2 rounded text-[#151875]"
-              onClick={() => handleAccordionClick(index)}
-            >
-              {item.question}
-            </button>
-            {openAccordion.includes(index) && (
-              <div className="p-2 bg-gray-100 border-l-4 border-blue-500">
-                {item.answer}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-      <div className="w-1/2 bg-gray-100 p-9 rounded-lg ">
-        <h2 className="text-3xl font-bold mb-4 text-[#151875] py-7">Ask a Question</h2>
-        <input
-          type="text"
-          placeholder="Your Name*"
-          className="w-full mb-2 p-2 border border-gray-300 rounded py-3"
-        />
-        <input
-          type="email"
-          placeholder="Your Email*"
-          className="w-full mb-2 p-2 border border-gray-300 rounded py-3"
-        />
-        <input
-          type="text"
-          placeholder="Your Question*"
-          className="w-full mb-2 p-2 border border-gray-300 rounded py-11"
-        />
-        <button className="w-1/3 bg-[#151875] text-white p-2 ml-1 rounded">
-          Submit
-        </button>
-      </div>
+      <div className="flex flex-col md:flex-row p-4 max-w-6xl mx-auto mt-20 gap-10 py-11 h-auto">
+
+{/* General Information Section */}
+<div className="w-full md:w-1/2">
+  <h2 className="text-3xl font-bold mb-4 text-[#151875]">General Information</h2>
+  {questions.map((item, index) => (
+    <div key={index} className="mb-2 py-3">
+      <button
+        className="w-full text-left p-2 rounded text-[#151875]"
+        onClick={() => handleAccordionClick(index)}
+      >
+        {item.question}
+      </button>
+      {openAccordion.includes(index) && (
+        <div className="p-2 bg-gray-100 border-l-4 border-blue-500">
+          {item.answer}
+        </div>
+      )}
     </div>
+  ))}
+</div>
+
+{/* Ask a Question Section */}
+<div className="w-full md:w-1/2 bg-gray-100 p-9 rounded-lg">
+  <h2 className="text-3xl font-bold mb-4 text-[#151875] py-7">Ask a Question</h2>
+  <input
+    type="text"
+    placeholder="Your Name*"
+    className="w-full mb-2 p-2 border border-gray-300 rounded py-3"
+  />
+  <input
+    type="email"
+    placeholder="Your Email*"
+    className="w-full mb-2 p-2 border border-gray-300 rounded py-3"
+  />
+  <input
+    type="text"
+    placeholder="Your Question*"
+    className="w-full mb-2 p-2 border border-gray-300 rounded py-11"
+  />
+  <button className="w-full md:w-1/3 bg-[#151875] text-white p-2 ml-1 rounded">
+    Submit
+  </button>
+</div>
+
+</div>
+
     <div className="flex justify-center items-center max-w-[1540px] mx-auto py-11">
             <img src="/brand1.png" alt="brand1" />
         </div>

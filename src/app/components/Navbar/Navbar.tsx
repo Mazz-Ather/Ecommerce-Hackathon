@@ -29,7 +29,7 @@ const Navbar = ({ cartItems }: any) => {
   };
 
   return (
-    <nav className="bg-white shadow-md lg:rounded-t-sm max-w-[1550px] mx-auto">
+    <nav className="bg-white shadow-md rounded-none lg:rounded-t-sm max-w-[1550px] mx-auto">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Left Section */}
@@ -176,18 +176,18 @@ const Navbar = ({ cartItems }: any) => {
               {showHomeDropdown && (
                 <div className="absolute z-10 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
                   <Link
-                    href="/home1"
+                    href="/"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     onClick={closeHomeDropdown}
                   >
-                    Home 1
+                    Home Page
                   </Link>
                   <Link
-                    href="/home2"
+                    href="/about"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     onClick={closeHomeDropdown}
                   >
-                    Home 2
+                 About us
                   </Link>
                 </div>
               )}

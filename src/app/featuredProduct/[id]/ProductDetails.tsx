@@ -50,115 +50,111 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
       </div>
 
       {/* Product Details Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 py-11 max-w-[1100px] mx-auto shadow-lg shadow-gray-300 rounded-lg bg-[#F6F5FF]">
-        {/* Left Section */}
-        <div className="flex">
-          {/* Mini Images - Left Section */}
-          <div className="flex flex-col mt-6 space-y-5 mr-4">
-            {colors.slice(0, 3).map((color, index) => (
-              <div
-                key={index}
-                onClick={() => setMainImage(color)}
-                className={`w-32 h-32 rounded-md bg-cover bg-center cursor-pointer border ${
-                  mainImage === color ? "" : "border-gray-300"
-                }`}
-                style={{ backgroundImage: `url(${images[color]})` }}
-              ></div>
-            ))}
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 py-11 max-w-6xl mx-auto shadow-lg shadow-gray-300 rounded-lg bg-[#F6F5FF]">
+  
+  {/* Left Section */}
+  <div className="flex flex-col items-center md:flex-row md:items-start">
+    {/* Mini Images - Left Section */}
+    <div className="flex flex-row md:flex-col mt-6 space-x-5 md:space-x-0 md:space-y-5 mr-4 mb-4 md:mb-0">
+      {colors.slice(0, 3).map((color, index) => (
+        <div
+          key={index}
+          onClick={() => setMainImage(color)}
+          className={`w-24 h-24 md:w-32 md:h-32 rounded-md bg-cover bg-center cursor-pointer border ${mainImage === color ? "" : "border-gray-300"}`}
+          style={{ backgroundImage: `url(${images[color]})` }}
+        ></div>
+      ))}
+    </div>
 
-          {/* Main Image - Right Section */}
-          <div
-            className="relative w-[375px] h-[487px] bg-cover bg-no-repeat rounded-md"
-            style={{
-              backgroundImage: `url(${images[mainImage]})`,
-              ...hoverStyle,
-            }}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={() => setHoverStyle({ backgroundPosition: "center" })}
-          ></div>
-        </div>
+    {/* Main Image - Right Section */}
+    <div
+      className="relative w-full md:w-[375px] h-[350px] md:h-[487px] bg-cover bg-no-repeat rounded-md"
+      style={{
+        backgroundImage: `url(${images[mainImage]})`,
+        ...hoverStyle,
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={() => setHoverStyle({ backgroundPosition: "center" })}
+    ></div>
+  </div>
 
-        {/* Right Section */}
-        <div className="space-y-3 mt-9">
-          {/* Title */}
-          <h1 className="text-3xl font-bold text-[#151875]">{title}</h1>
+  {/* Right Section */}
+  <div className="space-y-3 mt-9 px-4 md:px-0">
+    {/* Title */}
+    <h1 className="text-2xl md:text-3xl font-bold text-[#151875]">{title}</h1>
 
-          {/* Ratings */}
-          <div className="flex items-center space-x-2 text-lg">
-            <div className="flex">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <span key={i} className="text-yellow-500">&#9733;</span>
-              ))}
-            </div>
-            <span className="text-gray-500 text-sm">(22)</span>
-          </div>
-
-          {/* Price */}
-          <div className="flex items-center space-x-2">
-            <span className="text-lg font-bold text-[#151875]">
-              ${price.toFixed(2)}
-            </span>
-            <span className="text-sm line-through text-[#F24E1E]">
-              ${(price + 10).toFixed(2)}
-            </span>
-          </div>
-
-          {/* Colors */}
-          <div className="space-y-1 flex items-center gap-5">
-            <p className="text-sm font-medium">Colors</p>
-            <div className="flex space-x-2">
-              {colors.map((color, index) => (
-                <button
-                  key={index}
-                  className={`h-6 w-6 rounded-full border ${mainImage === color ? "ring-2 ring-black/70" : ""}`}
-                  style={{ backgroundColor: color }}
-                  onClick={() => setMainImage(color)}
-                ></button>
-              ))}
-            </div>
-          </div>
-
-          {/* Description */}
-          <p className="text-sm text-gray-500">
-            This chair is perfect for modern interiors and provides unmatched comfort.
-          </p>
-
-          {/* Add to Cart */}
-          <div className="flex space-x-4 items-center">
-            <button className="text-[#151875] px-4 py-2 rounded-md">Add to Cart</button>
-            <button className="p-2 rounded-full">
-              <FontAwesomeIcon icon={faHeart} className="text-[#151875]" />
-            </button>
-          </div>
-
-          {/* Categories */}
-          <p className="text-sm">
-            <span className="font-medium">Categories:</span> Chairs, Modern
-          </p>
-
-          {/* Tags */}
-          <p className="text-sm">
-            <span className="font-medium">Tags:</span> Comfort, Stylish
-          </p>
-
-          {/* Social Share */}
-          <div className="space-y-1 flex items-center gap-5">
-            <p className="text-sm font-medium">Share:</p>
-            <div className="flex space-x-4">
-              <button className="text-black z-[999]">
-                <FontAwesomeIcon icon={faFacebook} className="text-2xl"/>
-              </button>
-              <button className="text-black z-[999]">
-                <FontAwesomeIcon icon={faInstagram} className="text-2xl"/>
-              </button>
-              <button className="text-black z-[999]">
-                <FontAwesomeIcon icon={faTwitter} className="text-2xl"/>
-              </button>
-            </div>
-          </div>
-        </div>
+    {/* Ratings */}
+    <div className="flex items-center space-x-2 text-lg">
+      <div className="flex">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <span key={i} className="text-yellow-500">&#9733;</span>
+        ))}
       </div>
+      <span className="text-gray-500 text-sm">(22)</span>
+    </div>
+
+    {/* Price */}
+    <div className="flex items-center space-x-2">
+      <span className="text-lg font-bold text-[#151875]">${price.toFixed(2)}</span>
+      <span className="text-sm line-through text-[#F24E1E]">${(price + 10).toFixed(2)}</span>
+    </div>
+
+    {/* Colors */}
+    <div className="space-y-1 flex items-center gap-5">
+      <p className="text-sm font-medium">Colors</p>
+      <div className="flex space-x-2">
+        {colors.map((color, index) => (
+          <button
+            key={index}
+            className={`h-6 w-6 rounded-full border ${mainImage === color ? "ring-2 ring-black/70" : ""}`}
+            style={{ backgroundColor: color }}
+            onClick={() => setMainImage(color)}
+          ></button>
+        ))}
+      </div>
+    </div>
+
+    {/* Description */}
+    <p className="text-sm text-gray-500">
+      This chair is perfect for modern interiors and provides unmatched comfort.
+    </p>
+
+    {/* Add to Cart */}
+    <div className="flex space-x-4 items-center">
+      <button className="text-[#151875] px-4 py-2 rounded-md">Add to Cart</button>
+      <button className="p-2 rounded-full">
+        <FontAwesomeIcon icon={faHeart} className="text-[#151875]" />
+      </button>
+    </div>
+
+    {/* Categories */}
+    <p className="text-sm">
+      <span className="font-medium">Categories:</span> Chairs, Modern
+    </p>
+
+    {/* Tags */}
+    <p className="text-sm">
+      <span className="font-medium">Tags:</span> Comfort, Stylish
+    </p>
+
+    {/* Social Share */}
+    <div className="space-y-1 flex items-center gap-5">
+      <p className="text-sm font-medium">Share:</p>
+      <div className="flex space-x-4">
+        <button className="text-black z-[999]">
+          <FontAwesomeIcon icon={faFacebook} className="text-2xl"/>
+        </button>
+        <button className="text-black z-[999]">
+          <FontAwesomeIcon icon={faInstagram} className="text-2xl"/>
+        </button>
+        <button className="text-black z-[999]">
+          <FontAwesomeIcon icon={faTwitter} className="text-2xl"/>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
         {/* Content for Each Section */}
         <div className="mt-6 max-w-[1100px] mx-auto">
           {activeLink === "description" && (
