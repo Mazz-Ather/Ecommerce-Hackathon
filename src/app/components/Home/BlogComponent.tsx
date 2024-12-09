@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React from 'react';
 
 const BlogComponent = () => {
@@ -65,12 +66,12 @@ const BlogComponent = () => {
               <p className="text-gray-600 mb-4">{post.paragraph}</p>
               
               {/* Read More Link */}
-              <a
-                href="#"
+              <Link
+                href="/blog"
                 className="text-[#151875] hover:text-[#FB2E86] font-semibold underline group-hover:text-[#FB2E86]"
               >
                 Read More
-              </a>
+              </Link>
             </div>
           </div>
         ))}

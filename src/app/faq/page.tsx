@@ -44,11 +44,11 @@ const FaqPage = () => {
           <Link href="/" className="hover:text-gray-900 font-semibold">
             Home
           </Link>
-          <span>.</span>
-          <Link href="/" className="hover:text-gray-900 font-semibold">
-            pages
+          <span className="h-1 w-1 rounded-full bg-gray-400"></span>
+          <Link href="/pages/shop-grid-default" className="hover:text-gray-900 font-semibold">
+            Pages Grid Default
           </Link>
-          <span>.</span>
+          <span className="h-1 w-1 rounded-full bg-gray-400"></span>
           <span className="text-[#F24E1E] font-semibold capitalize">faq</span>
         </nav>
       </div>

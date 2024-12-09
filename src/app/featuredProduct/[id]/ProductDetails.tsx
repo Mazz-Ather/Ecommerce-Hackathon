@@ -32,7 +32,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
   return (
     <div className="max-w-[1700px] mx-auto p-4">
       {/* Breadcrumb Navbar */}
-      <div className="bg-[#F6F5FF] h-[286px] w-full p-9">
+      <div className="bg-[#F6F5FF] h-[286px] w-full p-9 pl-40 pt-16 ">
         <h2 className="text-left text-[#151875] text-5xl font-bold mb-8">
           Product Details
         </h2>

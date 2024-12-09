@@ -105,9 +105,9 @@ const Navbar = ({ cartItems }: any) => {
 
               {/* Shop */}
               <Link
-                href="/shop"
+                href="/pages/shop-grid-default"
                 className={`text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === '/shop' ? 'text-[#fb2e86]' : ''
+                  pathname === '/pages/shop-grid-default' ? 'text-[#fb2e86]' : ''
                 }`}
               >
                 Shop
