@@ -25,7 +25,7 @@ const carouselData: CarouselSlide[] = [
   },
   {
     id: 2,
-    mainImage: '/sofa2.png',
+    mainImage: '/s15r.png',
     lampImage: '/lamp21.png',
     miniHeading: 'Exclusive Furniture Offers',
     mainHeading: 'Modern Design Collection 2024',
@@ -34,7 +34,7 @@ const carouselData: CarouselSlide[] = [
   },
   {
     id: 3,
-    mainImage: '/sofa3.png',
+    mainImage: '/s10r.png',
     lampImage: '/lamp3.png',
     miniHeading: 'Limited Time Deal',
     mainHeading: 'Exclusive Designer Collection',

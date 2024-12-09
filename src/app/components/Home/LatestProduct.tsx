@@ -10,7 +10,7 @@ const products = [
   {
     id: 1,
     title: 'Product 1',
-    image: '/s14.jpeg',
+    image: '/s19.jpeg',
     discountedPrice: '$20.00',
     originalPrice: '$30.00',
     miniTitle: 'New Arrival',
@@ -28,7 +28,7 @@ const products = [
   {
     id: 3,
     title: 'Product 3',
-    image: '/s6.jpeg',
+    image: '/s20.jpeg',
     discountedPrice: '$15.00',
     originalPrice: '$25.00',
     miniTitle: 'Featured',
@@ -37,7 +37,7 @@ const products = [
   {
     id: 4,
     title: 'Product 4',
-    image: '/s9.jpeg',
+    image: '/s21.jpeg',
     discountedPrice: '$18.00',
     originalPrice: '$28.00',
     miniTitle: 'Special Offer',
@@ -55,7 +55,7 @@ const products = [
   {
     id: 6,
     title: 'Product 6',
-    image: '/s11.jpeg',
+    image: '/s23.jpeg',
     discountedPrice: '$30.00',
     originalPrice: '$40.00',
     miniTitle: 'Best Seller',
@@ -68,6 +68,47 @@ const products = [
     originalPrice: '$40.00',
     miniTitle: 'Best Seller',
   filter: 'Best Seller'
+  },{
+    id: 8,
+    title: 'Product 6',
+      image: '/s13.jpeg',
+    discountedPrice: '$30.00',
+    originalPrice: '$40.00',
+    miniTitle: 'Best Seller',
+  filter: 'Best Seller'
+  },{
+    id: 9,
+    title: 'Product 6',
+      image: '/s14.jpeg',
+    discountedPrice: '$30.00',
+    originalPrice: '$40.00',
+    miniTitle: 'Best Seller',
+  filter: 'Featured'
+  },{
+    id: 10,
+    title: 'Product 6',
+      image: '/s15.jpeg',
+    discountedPrice: '$30.00',
+    originalPrice: '$40.00',
+    miniTitle: 'Best Seller',
+  filter: 'Featured'
+  },{
+    id: 11,
+    title: 'Product 6',
+      image: '/s16.jpeg',
+    discountedPrice: '$30.00',
+    originalPrice: '$40.00',
+    miniTitle: 'Best Seller',
+  filter: 'Best Seller'
+  },
+  {
+    id: 12,
+    title: 'Product 6',
+      image: '/s17.jpeg',
+    discountedPrice: '$30.00',
+    originalPrice: '$40.00',
+    miniTitle: 'Best Seller',
+  filter: 'Special Offer'
   },
 ];
 

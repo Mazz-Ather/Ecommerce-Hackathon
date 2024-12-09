@@ -21,10 +21,10 @@ const DiscountItem = () => {
       subHeading: 'Eams Sofa Compact',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur, nisl nec ultricies lacinia, nisl nisl aliquet nisl, nec aliquam nisl nisl sit amet nisl.',
-      features: ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4'],
+      features: ['it is a sofa', 'it is a chair', 'it is a table', 'it is a bed'],
     },
     {
-      imageSrc: '/s8.jpeg',
+      imageSrc: '/s10r.png',
       imageAlt: 'Plastic Chair',
       heading: '30% discount of all products',
       subHeading: 'Plastic Chair',

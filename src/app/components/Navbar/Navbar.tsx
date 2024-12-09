@@ -60,14 +60,14 @@ const Navbar = ({ cartItems }: any) => {
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={closeHomeDropdown}
                     >
-                      Home Page
+                  Home Page
                     </Link>
                     <Link
                       href="/about"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={closeHomeDropdown}
                     >
-                      About Us
+                     About us
                     </Link>
                   </div>
                 )}
@@ -95,12 +95,12 @@ const Navbar = ({ cartItems }: any) => {
 
               {/* about */}
               <Link
-                href="/about"
+                href="/blog"
                 className={`text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === '/about' ? 'text-[#fb2e86]' : ''
+                  pathname === '/blog' ? 'text-[#fb2e86]' : ''
                 }`}
               >
-                About
+               Blog
               </Link>
 
               {/* Shop */}

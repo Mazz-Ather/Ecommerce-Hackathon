@@ -23,7 +23,9 @@
   ## dynamic page 
   - 16th component is featured product page which has a grid of products and each product has a image , title , price and a button to add to cart and also has a shadow effect on hover of each product 
  - 17th component is about us page which has a image as background and a heading and a paragraph and a button to subscribe to the newsletter and also has a overlay effect on the image
- 
+  
+
+
  ## packages to install
  - `npm install react-icons`
  - `npm install @fortawesome/react-fontawesome`
