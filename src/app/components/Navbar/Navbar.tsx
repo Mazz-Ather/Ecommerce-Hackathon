@@ -85,9 +85,9 @@ const Navbar = ({ cartItems }: any) => {
 
               {/* Products */}
               <Link
-                href="/products"
+                href="/pages/shopLeft"
                 className={`text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === '/products' ? 'text-[#fb2e86]' : ''
+                  pathname === '/pages/shopLeft' ? 'text-[#fb2e86]' : ''
                 }`}
               >
                 Products
@@ -105,9 +105,9 @@ const Navbar = ({ cartItems }: any) => {
 
               {/* Shop */}
               <Link
-                href="/shop"
+                href="/pages/shopList"
                 className={`text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === '/shop' ? 'text-[#fb2e86]' : ''
+                  pathname === '/pages/shopList' ? 'text-[#fb2e86]' : ''
                 }`}
               >
                 Shop
