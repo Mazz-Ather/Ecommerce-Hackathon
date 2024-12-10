@@ -334,13 +334,32 @@ const ShopLeft = () => {
           <div className='mt-12 mb-12'>
             <h3 className='text-[#151875] underline underline-offset-4 pb-4 text-xl font-bold'>Filter By Color</h3>
             <div className='grid grid-cols-3 gap-4'>
-              {colorName.map((item, index) => (
-                <div key={index} className='flex items-center gap-1'>
-               <div className='w-5 h-5 bg-indigo-500 rounded-full'></div>
-                  <h4>{item.title}</h4>
-                </div>
-              ))}
-            </div>
+  <div className='flex items-center gap-2'>
+    <div className='w-4 h-4 rounded-full bg-red-500'></div>
+    <span className='text-gray-700'>Red</span>
+  </div>
+  <div className='flex items-center gap-2'>
+    <div className='w-4 h-4 rounded-full bg-blue-500'></div>
+    <span className='text-gray-700'>Blue</span>
+  </div>
+  <div className='flex items-center gap-2'>
+    <div className='w-4 h-4 rounded-full bg-green-500'></div>
+    <span className='text-gray-700'>Green</span>
+  </div>
+  <div className='flex items-center gap-2'>
+    <div className='w-4 h-4 rounded-full bg-yellow-500'></div>
+    <span className='text-gray-700'>Yellow</span>
+  </div>
+  <div className='flex items-center gap-2'>
+    <div className='w-4 h-4 rounded-full bg-purple-500'></div>
+    <span className='text-gray-700'>Purple</span>
+  </div>
+  <div className='flex items-center gap-2'>
+    <div className='w-4 h-4 rounded-full bg-orange-500'></div>
+    <span className='text-gray-700'>Orange</span>
+  </div>
+</div>
+
           </div>
         </div>
   

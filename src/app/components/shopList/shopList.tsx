@@ -90,7 +90,7 @@ const ShopList = () => {
     <>
     <div className='max-w-[1540px] mx-auto'>
       
-    <div className="bg-[#fbfbff] h-[286px] max-w-[1750px] mx-auto p-9 pl-52 pt-16 ">
+    <div className="bg-[#fbfbff] h-[286px] max-w-[1750px] mx-auto p-9 md:pl-52 pt-16 ">
         <h2 className="text-left text-[#151875] text-5xl font-bold mb-8">
          Shop List
         </h2>
@@ -107,7 +107,7 @@ const ShopList = () => {
         </nav>
       </div>
 
-        <div className="md:container md:px-[1.3rem] px-[.8rem] pt-12 md:pt-[98px] flex items-center justify-between max-w-[1540px] mx-auto lg:ml-16">
+        <div className="md:container md:px-[1.3rem] px-[.8rem] pt-12 md:pt-[98px] flex items-center justify-between mx-auto  ">
           <div className=''>
               <h2 className='text-indigo-500 font-bold mt-2 text-xl lg:text-3xl'>Ecommerce Acceories & Fashion item</h2>
               <h4 className='text-gray-600'>About 9,620 results (0.62 seconds)</h4>

@@ -43,7 +43,7 @@ const Demo = () => {
   </nav>
 </div>
 
-        <div className='lg:container lg:px-[1.3rem] px-[.8rem] lg:flex justify-center gap-8 lg:mb-32'>
+        <div className='xl:container lg:px-[1.3rem] px-[.8rem] lg:flex justify-center gap-8 lg:mb-32'>
             <div className=' lg:w-[770px]'>
                 <ShippingInfo/>
             </div>

@@ -64,7 +64,7 @@ const TopAnnouncement = () => {
           </div>
   
           {/* Login Link */}
-          <Link href="/pages/login" className="flex items-center gap-1 hover:text-gray-200">
+          <Link href="/pages/sign-in" className="flex items-center gap-1 hover:text-gray-200">
             <span>Login</span>
             <IoPersonOutline />
           </Link>

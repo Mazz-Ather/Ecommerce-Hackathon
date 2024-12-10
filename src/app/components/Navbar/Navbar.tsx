@@ -57,7 +57,7 @@ export default function Navbar() {
                   />
                 </button>
                 {showHomeDropdown && (
-                  <div className="absolute z-50 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
+                  <div className="absolute z-50 mt-2 w-48 rounded-md shadow-lg py-1 bg-[#e0e0e2] ring-1 ring-black ring-opacity-5">
                     <Link
                       href="/"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -71,6 +71,48 @@ export default function Navbar() {
                       onClick={closeHomeDropdown}
                     >
                       About Us
+                    </Link>
+                    <Link
+                      href="/pages/sign-up"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={closeHomeDropdown}
+                    >
+                      Sign Up
+                    </Link>
+                    <Link
+                      href="/pages/sign-in"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={closeHomeDropdown}
+                    >
+                      Sign In
+                    </Link>
+                    <Link
+                      href="/pages/cart"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={closeHomeDropdown}
+                    >
+                      Cart
+                    </Link>
+                    <Link
+                      href="/pages/checkout"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={closeHomeDropdown}
+                    >
+                      Checkout
+                    </Link>
+                    <Link
+                      href="/pages/faq"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={closeHomeDropdown}
+                    >
+                      FAQ
+                    </Link>
+                    <Link
+                      href="/pages/shop-grid-default"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={closeHomeDropdown}
+                    >
+                      Shop Grid Default
                     </Link>
                   </div>
                 )}
@@ -127,7 +169,7 @@ export default function Navbar() {
                     />
                   </button>
                   {showHomeDropdown && (
-                    <div className="absolute z-50 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
+                    <div className="absolute z-50 mt-2 w-48 rounded-md shadow-lg py-1 bg-[#e0e0e2] ring-1 ring-black ring-opacity-5">
                       <Link
                         href="/"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -142,6 +184,48 @@ export default function Navbar() {
                       >
                         About Us
                       </Link>
+                      <Link
+                      href="/pages/sign-up"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={closeHomeDropdown}
+                    >
+                      Sign Up
+                    </Link>
+                    <Link
+                      href="/pages/sign-in"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={closeHomeDropdown}
+                    >
+                      Sign In
+                    </Link>
+                    <Link
+                      href="/pages/cart"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={closeHomeDropdown}
+                    >
+                      Cart
+                    </Link>
+                    <Link
+                      href="/pages/checkout"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={closeHomeDropdown}
+                    >
+                      Checkout
+                    </Link>
+                    <Link
+                      href="/pages/faq"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={closeHomeDropdown}
+                    >
+                      FAQ
+                    </Link>
+                    <Link
+                      href="/pages/shop-grid-default"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={closeHomeDropdown}
+                    >
+                      Shop Grid Default
+                    </Link>
                     </div>
                   )}
                 </div>
