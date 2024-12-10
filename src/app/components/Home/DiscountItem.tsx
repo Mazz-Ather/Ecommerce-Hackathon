@@ -15,7 +15,7 @@ const DiscountItem = () => {
 
   const slides = [
     {
-     imageSrc: '/discount1.png',
+     imageSrc: '/ishanco on eBay.jpeg',
       imageAlt: 'Wood Chair',
       heading: '20% discount of all products',
       subHeading: 'Eams Sofa Compact',
@@ -24,7 +24,7 @@ const DiscountItem = () => {
       features: ['it is a sofa , chair & so comfortable', 'it is a well designed sofa ', 'it is so light weight ', 'it is to be used in any room'],
     },
     {
-      imageSrc: '/s10r.png',
+      imageSrc: '/s4.jpeg',
       imageAlt: 'Plastic Chair',
       heading: '30% discount of all products',
       subHeading: 'Plastic Chair',

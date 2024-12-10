@@ -22,10 +22,9 @@ export default function Home() {
    <ShopexOffers/>
    <SecondHero/>
    <TrendingProduct/>
-   <PreDiscount/>
+   <PreDiscount/> 
    <DiscountItem/>
    <TopCategories/>
-{/*  */}
    <NewsLetter/>
    <Brands/>
    <BlogComponent/>
