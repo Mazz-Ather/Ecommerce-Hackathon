@@ -124,7 +124,7 @@ const LatestProduct = () => {
   };
 
   return (
-    <div className="py-10 max-w-[1440px] mx-auto px-4 sm:px-10">
+    <div className="py-10 max-w-[1440px] mx-auto px-4 sm:px-10 overflow-hidden">
     <h2 className="text-center text-[#151875] text-5xl font-bold mb-5">Latest Products</h2>
     
     <div className="flex justify-center -space-x-4 sm:space-x-4 md:space-x-6 mb-5 ">
@@ -150,7 +150,7 @@ const LatestProduct = () => {
             <img
               src={product.image}
               alt={product.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-scale-down"
             />
   
             {/* Hover Icons (Bottom-Left) */}

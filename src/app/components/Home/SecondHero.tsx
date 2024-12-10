@@ -9,30 +9,30 @@ const SecondHero = () => {
     {/* Left Side (Image and Text) */}
     <div className="w-full max-w-[500px] h-[500px] md:h-[400px] lg:h-[500px]">
       <img
-        src="/secondhero.png" // You can replace this with your image
+        src="/secondhero.png" 
         alt="Sofa"
         className="w-full h-full object-cover"
       />
     </div>
     
     {/* Right Side (Text) */}
-    <div className="flex flex-col items-start ml-0 md:ml-10 lg:ml-16">
+    <div className="flex flex-col items-start ml-0 md:ml-10 lg:ml-16 p-4">
       <h2 className="text-[#151875] text-2xl md:text-3xl lg:text-5xl -mt-16 font-bold mb-6">
         Unique Features of Latest & Trending Products
       </h2>
 
       {/* Three Paragraphs with Circles */}
-      <div className="space-y-6">
+      <div className="space-y-6 ">
         <div className="flex items-center">
-          <div className="w-4 h-4 rounded-full bg-red-500 mr-4"></div>
+          <div className="w-4 h-4 p-2 rounded-full bg-red-500 mr-4"></div>
           <p className="text-sm md:text-base text-gray-700">All frames constructed with hardwood solids and laminates</p>
         </div>
         <div className="flex items-center">
-          <div className="w-4 h-4 rounded-full bg-indigo-500 mr-4"></div>
+          <div className="w-4 h-4 p-2 rounded-full bg-indigo-500 mr-4"></div>
           <p className="text-sm md:text-base text-gray-700">Reinforced with doubles, glue, screw-on brads nail-corner blocks and machine nails.</p>
         </div>
         <div className="flex items-center">
-          <div className="w-4 h-4 rounded-full bg-green-500 mr-4"></div>
+          <div className="w-4 h-4 p-2 rounded-full bg-green-500 mr-4"></div>
           <p className="text-sm md:text-base text-gray-700">Arms, backs, and seats are structured with solid wood.</p>
         </div>
       </div>

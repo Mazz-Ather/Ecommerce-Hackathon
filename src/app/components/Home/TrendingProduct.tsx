@@ -41,7 +41,7 @@ const TrendingProduct = () => {
       {products.map((product) => (
         <div
           key={product.id}
-          className="w-full max-w-[270px] h-[360px] bg-white rounded-lg shadow-lg overflow-hidden group mx-auto"
+          className="w-full max-w-[270px] h-[360px] bg-white rounded-lg shadow-lg overflow-hidden group mx-auto relative"
         >
           <div className="w-full h-[244px] bg-[#F5F6F8] flex justify-center items-center">
             <img
@@ -49,6 +49,51 @@ const TrendingProduct = () => {
               alt={product.title}
               className="w-full h-full object-cover"
             />
+          </div>
+  
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 flex gap-4">
+            <div className="w-10 h-10 bg-indigo-500 text-white rounded-full flex justify-center items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-6 h-6"
+              >
+                <path d="M12 16l4-4-4-4M8 12l4-4-4-4" />
+              </svg>
+            </div>
+            <div className="w-10 h-10 text-indigo-500 rounded-full flex justify-center items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-6 h-6"
+              >
+                <path d="M20 12h-8m4-4l-4 4 4 4" />
+              </svg>
+            </div>
+            <div className="w-10 h-10 text-indigo-500 rounded-full flex justify-center items-center border-2 border-indigo-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-6 h-6"
+              >
+                <path d="M19 10l-4 4 4 4m-4-4h-4l4-4m-4 4l4-4-4-4" />
+              </svg>
+            </div>
           </div>
   
           <div className="p-4 flex flex-col justify-center items-center space-y-2">
@@ -68,6 +113,7 @@ const TrendingProduct = () => {
       ))}
     </div>
   </div>
+  
   );
 };
 
