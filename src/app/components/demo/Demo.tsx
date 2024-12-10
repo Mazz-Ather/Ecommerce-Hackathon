@@ -10,7 +10,7 @@ const Demo = () => {
   <h2 className="text-left text-[#151875] text-4xl md:text-5xl font-bold mb-4">
     hekto demo
   </h2>
-  <nav className="flex flex-wrap items-center space-x-2 text-sm text-gray-500">
+  {/* <nav className="flex flex-wrap items-center space-x-2 text-sm text-gray-500">
     <Link href="/" className="hover:text-gray-900 font-semibold">
       Home
     </Link>
@@ -40,7 +40,7 @@ const Demo = () => {
     </Link>
     <span className="h-1 w-1 rounded-full bg-gray-400"></span>
     <span className="text-[#F24E1E] font-semibold">Shop Grid Default</span>
-  </nav>
+  </nav> */}
 </div>
 
         <div className='xl:container lg:px-[1.3rem] px-[.8rem] lg:flex justify-center gap-8 lg:mb-32'>

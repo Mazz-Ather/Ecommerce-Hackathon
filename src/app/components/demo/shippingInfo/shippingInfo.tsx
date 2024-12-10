@@ -35,7 +35,7 @@ const ShippingInfo = () => {
           </h3>
           <div className='flex mt-4 md:mt-0'>
             <h6 className='text-[14px] text-gray-400 pr-2'>Already have an account?</h6>
-            <h6 className='text-[14px] text-pink-600 pr-2'>Log in</h6>
+            <h6 className='text-[14px] text-gray-400 pr-2'>Log in</h6>
           </div>
         </div>
 

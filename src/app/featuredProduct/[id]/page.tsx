@@ -1,6 +1,6 @@
-import products from "@/app/featuredProduct/[id]/dataProduct"; // Adjust for default export
+import products from "@/app/featuredProduct/[id]/dataProduct"; 
 import { notFound } from "next/navigation";
-import ProductDetails from "@/app/featuredProduct/[id]/ProductDetails"; // Import the client-side component
+import ProductDetails from "@/app/featuredProduct/[id]/ProductDetails"; 
 
 interface ProductPageProps {
   params: { id: string };
