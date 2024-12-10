@@ -1,254 +1,171 @@
-'use client';
+'use client'
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { FiChevronDown, FiMenu, FiSearch, FiX } from "react-icons/fi";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { FiSearch, FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
-import { usePathname } from 'next/navigation';
-
-const Navbar = ({ cartItems }: any) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function Navbar() {
   const [showHomeDropdown, setShowHomeDropdown] = useState(false);
-  const pathname = usePathname();
-  
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleHomeDropdown = () => setShowHomeDropdown(!showHomeDropdown);
+  const closeHomeDropdown = () => setShowHomeDropdown(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   useEffect(() => {
-    // Close the home dropdown when the route changes
-    const handleRouteChange = () => {
-      setShowHomeDropdown(false);
-    };
-  // Remove the router events since they're not needed in app directory
-  handleRouteChange();
-}, [pathname]); // Change dependency to pathname
+    if (showHomeDropdown || isMenuOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
 
-  const toggleHomeDropdown = () => {
-    setShowHomeDropdown(!showHomeDropdown);
-  };
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [showHomeDropdown, isMenuOpen]);
 
-  const closeHomeDropdown = () => {
-    setShowHomeDropdown(false);
-  };
+  const links = [
+    { href: "/", label: "Home", dropdown: true },
+    { href: "/pages", label: "Pages" },
+    { href: "/products", label: "Products" },
+    { href: "/blog", label: "Blog" },
+    { href: "/shop", label: "Shop" },
+    { href: "/contact", label: "Contact" },
+  ];
 
   return (
-    <nav className="bg-white shadow-md rounded-none lg:rounded-t-sm max-w-[1550px] mx-auto">
-      <div className="px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          {/* Left Section */}
-          <div className="flex items-center lg:ml-36">
-            <Link href="/" className="font-bold text-xl tracking-tight text-gray-900 m-4">
-            <h1 className='text-black text-2xl font-bold'>HEKTO</h1>
-            </Link>
-          </div>
+    <nav className="bg-white shadow-md  xl:max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex justify-between items-center h-16 max-w-[1100px] mx-auto">
+        {/* Logo Section */}
+        <div>
+          <Link href="/" className="font-bold text-xl tracking-tight">
+            <h1 className="text-black text-2xl font-bold">HEKTO</h1>
+          </Link>
+        </div>
 
-          {/* Center Section */}
-          <div className="hidden lg:flex items-center justify-start">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {/* Home */}
-              <div className="relative">
+        {/* Links for Larger Screens */}
+        <div className="hidden lg:flex items-center">
+          {links.map((link, index) =>
+            link.dropdown ? (
+              <div key={index} className="relative">
                 <button
-                  className={`text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium flex items-center gap-1 ${
-                    pathname === '/' ? 'text-[#fb2e86]' : ''
-                  }`}
+                  className="text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-sm font-medium flex items-center gap-1"
                   onClick={toggleHomeDropdown}
                 >
-                  Home
-                  <FiChevronDown className={`transition-transform ${showHomeDropdown ? 'rotate-180' : ''}`} />
+                  {link.label}
+                  <FiChevronDown
+                    className={`transition-transform ${
+                      showHomeDropdown ? "rotate-180" : ""
+                    }`}
+                  />
                 </button>
                 {showHomeDropdown && (
-                  <div className="absolute z-10 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
+                  <div className="absolute z-50 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
                     <Link
                       href="/"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={closeHomeDropdown}
                     >
-                  Home Page
+                      Home Page
                     </Link>
                     <Link
                       href="/about"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={closeHomeDropdown}
                     >
-                     About us
+                      About Us
                     </Link>
                   </div>
                 )}
               </div>
-
-              {/* Pages */}
+            ) : (
               <Link
-                href="/pages"
-                className={`text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === '/pages' ? 'text-[#fb2e86]' : ''
-                }`}
+                key={index}
+                href={link.href}
+                className="text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-sm font-medium"
               >
-                Pages
+                {link.label}
               </Link>
+            )
+          )}
+        </div>
 
-              {/* Products */}
-              <Link
-                href="/pages/shopLeft"
-                className={`text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === '/pages/shopLeft' ? 'text-[#fb2e86]' : ''
-                }`}
-              >
-                Products
-              </Link>
-
-              {/* about */}
-              <Link
-                href="/blog"
-                className={`text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === '/blog' ? 'text-[#fb2e86]' : ''
-                }`}
-              >
-               Blog
-              </Link>
-
-              {/* Shop */}
-              <Link
-                href="/pages/shopList"
-                className={`text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === '/pages/shopList' ? 'text-[#fb2e86]' : ''
-                }`}
-              >
-                Shop
-              </Link>
-
-              {/* Contact */}
-              <Link
-                href="/pages/contact"
-                className={`text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === '/pages/contact' ? 'text-[#fb2e86]' : ''
-                }`}
-              >
-                Contact
-              </Link>
+        {/* Search and Hamburger Menu */}
+        <div className="flex items-center">
+          <div className="hidden lg:flex relative">
+            <input
+              type="text"
+              className="px-4 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Search..."
+            />
+            <div className="absolute inset-y-0 right-0 flex items-center pointer-events-none bg-[#fb2e86] text-white px-3 rounded-r-md">
+            <FiSearch />
             </div>
           </div>
-
-          {/* Right Section */}
-          <div className="hidden lg:flex items-center">
-            <div className="relative mr-36">
-              <input
-                type="text"
-                className="px-3 py-1 pr-8 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder=""
-              />
-              <div className="absolute inset-y-0 right-0 flex items-center pointer-events-none bg-[#fb2e86] text-white p-3">
-                <FiSearch className="" />
-              </div>
-            </div>
-          </div>
-
-          {/* Hamburger Menu */}
-          <div className="flex lg:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span className="sr-only">Open main menu</span>
-              {!isMenuOpen ? (
-                <FiMenu className="block h-6 w-6" />
-              ) : (
-                <FiX className="block h-6 w-6" />
-              )}
-            </button>
-          </div>
+          <button
+            className="lg:hidden ml-4 text-gray-500 hover:text-[#fb2e86]"
+            onClick={toggleMenu}
+          >
+            {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <div className="relative">
-              <button
-                className={`text-gray-500 hover:text-gray-900 block px-3 py-2 rounded-md text-lg font-medium flex items-center gap-1 ${
-                  pathname === '/' ? 'text-[#fb2e86]' : ''
-                }`}
-                onClick={toggleHomeDropdown}
-              >
-                Home
-                <FiChevronDown className={`transition-transform ${showHomeDropdown ? 'rotate-180' : ''}`} />
-              </button>
-              {showHomeDropdown && (
-                <div className="absolute z-10 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
-                  <Link
-                    href="/"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    onClick={closeHomeDropdown}
+        <div className="lg:hidden">
+          <div className="px-4 pt-4 pb-2 space-y-2">
+            {links.map((link, index) =>
+              link.dropdown ? (
+                <div key={index} className="relative">
+                  <button
+                    className="text-gray-500 hover:text-[#fb2e86] w-full text-left px-3 py-2 rounded-md text-lg font-medium flex items-center gap-1"
+                    onClick={toggleHomeDropdown}
                   >
-                    Home Page
-                  </Link>
-                  <Link
-                    href="/about"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    onClick={closeHomeDropdown}
-                  >
-                 About us
-                  </Link>
+                    {link.label}
+                    <FiChevronDown
+                      className={`transition-transform ${
+                        showHomeDropdown ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {showHomeDropdown && (
+                    <div className="absolute z-50 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
+                      <Link
+                        href="/"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        onClick={closeHomeDropdown}
+                      >
+                        Home Page
+                      </Link>
+                      <Link
+                        href="/about"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        onClick={closeHomeDropdown}
+                      >
+                        About Us
+                      </Link>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-            <Link
-              href="/pages"
-              className={`text-gray-500 hover:text-[#fb2e86] block px-3 py-2 rounded-md text-lg font-medium ${
-                pathname === '/pages' ? 'text-[#fb2e86]' : ''
-              }`}
-            >
-              Pages
-            </Link>
-            <Link
-              href="/products"
-              className={`text-gray-500 hover:text-[#fb2e86] block px-3 py-2 rounded-md text-lg font-medium ${
-                pathname === '/products' ? 'text-[#fb2e86]' : ''
-              }`}
-            >
-              Products
-            </Link>
-            <Link
-              href="/blog"
-              className={`text-gray-500 hover:text-[#fb2e86] block px-3 py-2 rounded-md text-lg font-medium ${
-                pathname === '/blog' ? 'text-[#fb2e86]' : ''
-              }`}
-            >
-              Blog
-            </Link>
-            <Link
-              href="/shop"
-              className={`text-gray-500 hover:text-[#fb2e86] block px-3 py-2 rounded-md text-lg font-medium ${
-                pathname === '/shop' ? 'text-[#fb2e86]' : ''
-              }`}
-            >
-              Shop
-            </Link>
-            <Link
-              href="/contact"
-              className={`text-gray-500 hover:text-[#fb2e86] block px-3 py-2 rounded-md text-lg font-medium ${
-                pathname === '/contact' ? 'text-[#fb2e86]' : ''
-              }`}
-            >
-              Contact
-            </Link>
+              ) : (
+                <Link
+                  key={index}
+                  href={link.href}
+                  className="block text-gray-500 hover:text-[#fb2e86] px-3 py-2 rounded-md text-lg font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </div>
-          <div className="px-2 pt-2 pb-3">
-            <div className="relative">
-              <input
-                type="text"
-                className="px-4 py-2 pr-8 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
-                placeholder=""
-              />
-              <div className="absolute inset-y-0 right-0 flex items-center pointer-events-none bg-[#fb2e86] text-white p-3">
-                <FiSearch className="" />
-              </div>
-            </div>
+          <div className="px-4 py-2">
+            <input
+              type="text"
+              className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Search..."
+            />
           </div>
         </div>
       )}
     </nav>
   );
-};
-
-export default Navbar;
+}

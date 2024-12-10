@@ -55,7 +55,8 @@ const HeroCarousel = () => {
   }, []);
 
   return (
-    <div className="bg-[#f2f0ff] h-auto relative max-w-[1550px] mx-auto overflow-hidden">
+    <>
+    <div className="bg-[#f2f0ff] h-[100vh] lg:h-auto relative max-w-[1550px] mx-auto overflow-hidden ">
     <div className="container mx-auto h-full flex flex-col lg:flex-row items-center justify-center px-4 lg:px-8">
       {/* Left Section */}
       <div className="w-full lg:w-[60%] relative z-10 space-y-3 space-x-16 text-center lg:text-left lg:ml-11">
@@ -71,7 +72,7 @@ const HeroCarousel = () => {
         </div>
   
         {/* Text Content */}
-        <div className="space-y-3 lg:-mr-11">
+        <div className="space-y-3 w-fit pr-16  md:pl-12 lg:pl-0 lg:pr-0 pt-9 lg:-mr-11">
           <p className="text-[#fb2e86] text-base lg:text-lg font-bold">
             {carouselData[currentSlide].miniHeading}
           </p>
@@ -104,7 +105,7 @@ const HeroCarousel = () => {
     </div>
   
     {/* Carousel Navigation */}
-    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4 z-[999]">
+    <div className="absolute bottom-8 left-1/2  -mb-6  pt-7 transform -translate-x-1/2 flex gap-4 z-[999]">
       {carouselData.map((_, index) => (
         <button
           key={index}
@@ -119,6 +120,7 @@ const HeroCarousel = () => {
       ))}
     </div>
   </div>
+    </>
   );
 };
 

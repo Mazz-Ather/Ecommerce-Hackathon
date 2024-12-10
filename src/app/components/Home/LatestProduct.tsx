@@ -13,7 +13,7 @@ const products = [
     image: '/s19.jpeg',
     discountedPrice: '$20.00',
     originalPrice: '$30.00',
-    miniTitle: 'New Arrival',
+    miniTitle: 'Pink Sofa',
     filter: 'New Arrival',
   },
   {
@@ -22,7 +22,7 @@ const products = [
     image: '/s7.jpeg',
     discountedPrice: '$25.00',
     originalPrice: '$35.00',
-    miniTitle: 'Best Seller',
+    miniTitle: 'Brown Sofa',
     filter: 'New Arrival'
   },
   {
@@ -31,7 +31,7 @@ const products = [
     image: '/s20.jpeg',
     discountedPrice: '$15.00',
     originalPrice: '$25.00',
-    miniTitle: 'Featured',
+    miniTitle: 'pinkish Sofa',
    filter: 'New Arrival'
   },
   {
@@ -40,7 +40,7 @@ const products = [
     image: '/s21.jpeg',
     discountedPrice: '$18.00',
     originalPrice: '$28.00',
-    miniTitle: 'Special Offer',
+    miniTitle: 'yellowish Sofa',
  filter: 'New Arrival'
   },
   {
@@ -49,7 +49,7 @@ const products = [
     image: '/s10.jpeg',
     discountedPrice: '$22.00',
     originalPrice: '$32.00',
-    miniTitle: 'New Arrival',
+    miniTitle: 'greenish Sofa',
    filter: 'New Arrival'
   },
   {
@@ -58,7 +58,7 @@ const products = [
     image: '/s23.jpeg',
     discountedPrice: '$30.00',
     originalPrice: '$40.00',
-    miniTitle: 'Best Seller',
+    miniTitle: 'blueish Sofa',
   filter: 'New Arrival'
   },{
     id: 7,
@@ -66,7 +66,7 @@ const products = [
       image: '/s12.jpeg',
     discountedPrice: '$30.00',
     originalPrice: '$40.00',
-    miniTitle: 'Best Seller',
+    miniTitle: 'greyish Sofa',
   filter: 'Best Seller'
   },{
     id: 8,
@@ -74,7 +74,7 @@ const products = [
       image: '/s13.jpeg',
     discountedPrice: '$30.00',
     originalPrice: '$40.00',
-    miniTitle: 'Best Seller',
+    miniTitle: 'redish Sofa',
   filter: 'Best Seller'
   },{
     id: 9,
@@ -82,7 +82,7 @@ const products = [
       image: '/s14.jpeg',
     discountedPrice: '$30.00',
     originalPrice: '$40.00',
-    miniTitle: 'Best Seller',
+    miniTitle: 'bluish Sofa',
   filter: 'Featured'
   },{
     id: 10,
@@ -90,7 +90,7 @@ const products = [
       image: '/s15.jpeg',
     discountedPrice: '$30.00',
     originalPrice: '$40.00',
-    miniTitle: 'Best Seller',
+    miniTitle: 'whitiish Sofa',
   filter: 'Featured'
   },{
     id: 11,
@@ -98,7 +98,7 @@ const products = [
       image: '/s16.jpeg',
     discountedPrice: '$30.00',
     originalPrice: '$40.00',
-    miniTitle: 'Best Seller',
+    miniTitle: 'brownish Sofa',
   filter: 'Best Seller'
   },
   {
@@ -107,7 +107,7 @@ const products = [
       image: '/s17.jpeg',
     discountedPrice: '$30.00',
     originalPrice: '$40.00',
-    miniTitle: 'Best Seller',
+    miniTitle: 'bluish Sofa',
   filter: 'Special Offer'
   },
 ];
@@ -127,7 +127,7 @@ const LatestProduct = () => {
     <div className="py-10 max-w-[1440px] mx-auto px-4 sm:px-10">
     <h2 className="text-center text-[#151875] text-5xl font-bold mb-5">Latest Products</h2>
     
-    <div className="flex justify-center space-x-4 mb-5">
+    <div className="flex justify-center -space-x-4 sm:space-x-4 md:space-x-6 mb-5 ">
       {filters.map((filter) => (
         <button
           key={filter}
@@ -139,14 +139,14 @@ const LatestProduct = () => {
       ))}
     </div>
   
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
       {filteredProducts.map((product) => (
         <div
           key={product.id}
           className="rounded-lg shadow-md w-full h-[356px] relative overflow-hidden group" // 'group' class to handle hover effects
         >
           {/* Main Product Image */}
-          <div className="w-full h-[269px] mx-auto relative bg-[#F7F7F7]">
+          <div className="w-full h-[269px] mx-auto relative bg-[#F7F7F7] hover:cursor-pointer">
             <img
               src={product.image}
               alt={product.title}
