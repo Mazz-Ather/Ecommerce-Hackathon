@@ -15,7 +15,7 @@ const DiscountItem = () => {
 
   const slides = [
     {
-      imageSrc: '/discount1.png',
+     imageSrc: '/discount1.png',
       imageAlt: 'Wood Chair',
       heading: '20% discount of all products',
       subHeading: 'Eams Sofa Compact',
