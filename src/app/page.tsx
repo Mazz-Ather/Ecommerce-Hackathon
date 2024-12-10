@@ -17,7 +17,7 @@ export default function Home() {
   return (
    <>
    <HeroCarousel/>
-   <FeaturedProducts/>
+    <FeaturedProducts/>
    <LatestProduct/>
    <ShopexOffers/>
    <SecondHero/>
@@ -25,10 +25,11 @@ export default function Home() {
    <PreDiscount/>
    <DiscountItem/>
    <TopCategories/>
+{/*  */}
    <NewsLetter/>
    <Brands/>
    <BlogComponent/>
    <ScrollToTop/>   
-   </>
+      </>
   );
 }

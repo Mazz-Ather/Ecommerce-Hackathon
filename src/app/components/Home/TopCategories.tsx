@@ -1,32 +1,27 @@
-'use client';
-
+'use client'
 import { useState, useEffect } from 'react';
 
-const useItemsPerPage = () => {
-  const [itemsPerPage, setItemsPerPage] = useState(4);
+const TopCategories = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(4); // Initially set to 4
 
   useEffect(() => {
     const updateItemsPerPage = () => {
       const width = window.innerWidth;
       if (width < 640) {
-        setItemsPerPage(2);
+        setItemsPerPage(2); // Set 2 items per page for smaller screens
       } else {
-        setItemsPerPage(4);
+        setItemsPerPage(4); // Set 4 items per page for larger screens
       }
     };
 
     updateItemsPerPage(); // Set initial value
     window.addEventListener('resize', updateItemsPerPage);
-    return () => window.removeEventListener('resize', updateItemsPerPage);
-  }, []);
 
-  return itemsPerPage;
-};
-
-const itemsPerPage = window.innerWidth < 640 ? 2 : 4; // Basic logic for smaller screens
-
-const TopCategories = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+    return () => {
+      window.removeEventListener('resize', updateItemsPerPage);
+    };
+  }, []); // Empty dependency array ensures this runs only once after initial render
 
   const products = [
     { id: 1, image: '/cat1.png', title: 'Wood Chair', price: '$19.99' },
@@ -41,15 +36,13 @@ const TopCategories = () => {
     { id: 10, image: '/s10.jpeg', title: 'Demanded Sofa', price: '$59.99' },
   ];
 
-  const itemsPerPage = 4; // Maximum number of visible cards at a time.
-
   const handleNavigationClick = (index: number) => {
     setActiveIndex(index);
   };
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 mb-9 mt-20">
-         <h2 className="text-center text-[#151875] text-5xl font-bold mb-8">
+      <h2 className="text-center text-[#151875] text-5xl font-bold mb-8">
         Top Categories
       </h2>
       {/* Product Container */}
@@ -59,12 +52,10 @@ const TopCategories = () => {
           .map((product) => (
             <div
               key={product.id}
-              className="relative mx-4 flex-shrink-0 w-[50%]  sm:w-[50%] md:w-[22%] md:pl-8 lg:w-[22%] group"
+              className="relative mx-4 flex-shrink-0 w-[50%] sm:w-[50%] md:w-[22%] md:pl-8 lg:w-[22%] group"
             >
               {/* Product Image */}
-              {/* shadow effect in left bottom  */}
               <div className="bg-white rounded-full p-6 hover:shadow-2xl hover:shadow-indigo-600 shadow-[9px_9px_10px_rgba(10,0,0,0.3)] transition-shadow duration-300 overflow-hidden group-hover:relative">
- 
                 <img
                   src={product.image}
                   alt={product.title}
