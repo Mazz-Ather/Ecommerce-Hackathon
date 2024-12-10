@@ -103,14 +103,14 @@ const ShopList = () => {
             Pages
           </Link>
           <span className="h-1 w-1 rounded-full bg-gray-400"></span>
-          <span className="text-[#F24E1E] font-semibold">My Account</span>
+          <span className="text-[#F24E1E] font-semibold">Shop List</span>
         </nav>
       </div>
 
         <div className="md:container md:px-[1.3rem] px-[.8rem] pt-12 md:pt-[98px] flex items-center justify-between max-w-[1540px] mx-auto lg:ml-16">
           <div className=''>
-              <h2 className='text-indigo-500 text-[28px] lg:text-[30px] 2xl:text-[34px]'>Ecommerce Acceories & Fashion item</h2>
-              <h4 className='text-extralight'>About 9,620 results (0.62 seconds)</h4>
+              <h2 className='text-indigo-500 font-bold mt-2 text-xl lg:text-3xl'>Ecommerce Acceories & Fashion item</h2>
+              <h4 className='text-gray-600'>About 9,620 results (0.62 seconds)</h4>
           </div>
           <div className='hidden lg:block'>
                 <div className='flex gap-9 '>
@@ -120,7 +120,7 @@ const ShopList = () => {
                     </div>
                     <div className='flex gap-2'>
                         <h3 className='text-indigo-500 font-normal'>Sort By: </h3>
-                        <h4 className='text-extralight   border rounded-sm border-primary py-1 px-3 font-lato flex items-center gap-1'>Best Match <span><BsChevronDown/></span></h4>
+                        <h4 className='text-gray-500   border rounded-sm border-primary py-1 px-3  flex items-center gap-1'>Best Match <span><BsChevronDown/></span></h4>
                     </div>
                     <div className='flex gap-8'>
                     <div className='flex items-center gap-2'>
@@ -140,14 +140,14 @@ const ShopList = () => {
         <div className='md:container md:px-[1.3rem] px-[.8rem] md:mt-24 mt-6'>
             {shopListData.map((item) => {
                 return <div key={item.id} className=' mb-8'>
-                    <div className=' md:flex gap-6 boxShadow p-2 md:p-6 items-center '>
+                    <div className=' md:flex gap-6 shadow-sm shadow-black p-2 md:p-6 items-center '>
                         <div>
                             <img src={item.img} alt="" />
                         </div>
 
                         <div>
                             <div className='flex items-center gap-4'>
-                                <h3 className='text-indigo-500'>{item.title}</h3>
+                                <h3 className='text-indigo-600 text-xl'>{item.title}</h3>
                                 <div className='my-3 flex justify-center '>
                                     <div className="flex h-3 md:w-[80px]  gap-2">
                                         <div className="h-3 w-3 rounded-full bg-yellow"></div>
@@ -159,7 +159,7 @@ const ShopList = () => {
 
                             <div className='flex items-center gap-3'>
                                 <h4 className='text-indigo-500'>{item.offerPrice}</h4>
-                                <h4 className='text-pink line-through'>{item.regularPrice}</h4>
+                                <h4 className='text-pink-500 line-through'>{item.regularPrice}</h4>
                                 <img src={item.review} alt="" />
                             </div>
                             <p className='mt-3 md:w-[70%] text-indigo-300'>{item.des}</p>

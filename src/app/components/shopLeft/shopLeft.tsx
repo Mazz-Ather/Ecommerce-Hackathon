@@ -182,27 +182,21 @@ const ShopLeft = () => {
     const colorName = [
         {
             title: "Blue",
-            color: "/assets/images/color1.png",
         },
         {
             title: "Orange",
-            color: "/assets/images/color2.png",
         },
         {
             title: "Brown",
-            color: "/assets/images/color3.png",
         },
         {
             title: "Green",
-            color: "/assets/images/color4.png",
         },
         {
             title: "Purple",
-            color: "/assets/images/color5.png",
         },
         {
             title: "Sky",
-            color: "/assets/images/color6.png",
         },
 
     ]
@@ -276,7 +270,7 @@ const ShopLeft = () => {
             <div>
               {discountData.map((item, index) => (
                 <div key={index} className='flex items-center gap-3 py-1'>
-                  <input className='bg-light_pink text-pink border-none' type="checkbox" />
+                  <input className='bg-pink-300 text-pink-500 border-none' type="checkbox" />
                   <h4 className='text-[#4649a3] font-medium'>{item.title}</h4>
                 </div>
               ))}
@@ -371,7 +365,7 @@ const ShopLeft = () => {
                   </div>
                   <div className='flex items-center gap-3'>
                     <h4 className='text-[#151875]'>{item.discountPrice}</h4>
-                    <h4 className='text -pink-500 line-through'>{item.originalPrice}</h4>
+                    <h4 className='text-pink-500 line-through'>{item.originalPrice}</h4>
                     <div className='flex gap-1'>
                       {[...Array(5)].map((_, i) => (
                         <FaStar key={i} className="text-yellow-500" />

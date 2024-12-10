@@ -24,9 +24,9 @@ export default function Navbar() {
   const links = [
     { href: "/", label: "Home", dropdown: true },
     { href: "/pages", label: "Pages" },
-    { href: "/products", label: "Products" },
+    { href: "/pages/shopList", label: "Products" },
     { href: "/blog", label: "Blog" },
-    { href: "/shop", label: "Shop" },
+    { href: "/pages/shopLeft", label: "Shop" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -93,7 +93,7 @@ export default function Navbar() {
             <input
               type="text"
               className="px-4 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Search..."
+              placeholder="..."
             />
             <div className="absolute inset-y-0 right-0 flex items-center pointer-events-none bg-[#fb2e86] text-white px-3 rounded-r-md">
             <FiSearch />
