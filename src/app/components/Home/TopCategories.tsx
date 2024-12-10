@@ -1,20 +1,44 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+const useItemsPerPage = () => {
+  const [itemsPerPage, setItemsPerPage] = useState(4);
+
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(4);
+      }
+    };
+
+    updateItemsPerPage(); // Set initial value
+    window.addEventListener('resize', updateItemsPerPage);
+    return () => window.removeEventListener('resize', updateItemsPerPage);
+  }, []);
+
+  return itemsPerPage;
+};
+
+const itemsPerPage = window.innerWidth < 640 ? 2 : 4; // Basic logic for smaller screens
 
 const TopCategories = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const products = [
-    { id: 1, image: '/cat1.png', title: 'sofa 1', price: '$19.99' },
-    { id: 2, image: '/cat2.png', title: 'luxury sofa', price: '$29.99' },
-    { id: 3, image: '/s8.jpeg', title: 'sofa 3', price: '$19.99' },
-    { id: 4, image: '/s9.jpeg', title: 'sofa 4', price: '$29.99' },
-    { id: 5, image: '/s14.jpeg', title: 'sofa 5', price: '$19.99' },
-    { id: 6, image: '/s4.jpeg', title: 'sofa 6', price: '$29.99' },
-    { id: 7, image: '/s9.jpeg', title: 'sofa 7', price: '$39.99' },
-    { id: 8, image: '/s6.jpeg', title: 'sofa 8', price: '$49.99' },
-    { id: 9, image: '/s7.jpeg', title: 'Product 9', price: '$59.99' },
+    { id: 1, image: '/cat1.png', title: 'Wood Chair', price: '$19.99' },
+    { id: 2, image: '/cat2.png', title: 'Plastic Chair', price: '$29.99' },
+    { id: 3, image: '/s8.jpeg', title: 'Luxury Sofa', price: '$19.99' },
+    { id: 4, image: '/s9.jpeg', title: 'Luxurious Sofa', price: '$29.99' },
+    { id: 5, image: '/s14.jpeg', title: 'Modern Sofa', price: '$19.99' },
+    { id: 6, image: '/s4.jpeg', title: 'Arm Sofa', price: '$29.99' },
+    { id: 7, image: '/s9.jpeg', title: 'Wood Sofa', price: '$39.99' },
+    { id: 8, image: '/s6.jpeg', title: 'Kids Sofa', price: '$49.99' },
+    { id: 9, image: '/s7.jpeg', title: 'Expensive Sofa', price: '$59.99' },
+    { id: 10, image: '/s10.jpeg', title: 'Demanded Sofa', price: '$59.99' },
   ];
 
   const itemsPerPage = 4; // Maximum number of visible cards at a time.
@@ -35,10 +59,12 @@ const TopCategories = () => {
           .map((product) => (
             <div
               key={product.id}
-              className="relative mx-4 flex-shrink-0 w-[90%] sm:w-[38%] md:w-[30%] lg:w-[22%] group"
+              className="relative mx-4 flex-shrink-0 w-[50%]  sm:w-[50%] md:w-[22%] md:pl-8 lg:w-[22%] group"
             >
               {/* Product Image */}
-              <div className="bg-white rounded-full p-6 shadow-md hover:shadow-xl hover:shadow-indigo-500/50 transition-shadow duration-300 overflow-hidden group-hover:relative">
+              {/* shadow effect in left bottom  */}
+              <div className="bg-white rounded-full p-6 hover:shadow-2xl hover:shadow-indigo-600 shadow-[9px_9px_10px_rgba(10,0,0,0.3)] transition-shadow duration-300 overflow-hidden group-hover:relative">
+ 
                 <img
                   src={product.image}
                   alt={product.title}

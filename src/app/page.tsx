@@ -16,22 +16,19 @@ import ScrollToTop from "./components/Home/ScrollToTop";
 export default function Home() {
   return (
    <>
-{/*    
    <HeroCarousel/>
    <FeaturedProducts/>
    <LatestProduct/>
    <ShopexOffers/>
    <SecondHero/>
-   */}
    <TrendingProduct/>
-{/* 
    <PreDiscount/>
    <DiscountItem/>
    <TopCategories/>
    <NewsLetter/>
    <Brands/>
    <BlogComponent/>
-   <ScrollToTop/>   */}
+   <ScrollToTop/>   
    </>
   );
 }

@@ -31,7 +31,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white shadow-md  xl:max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-white shadow-md  xl:max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8 ">
       <div className="flex justify-between items-center h-16 max-w-[1100px] mx-auto">
         {/* Logo Section */}
         <div>

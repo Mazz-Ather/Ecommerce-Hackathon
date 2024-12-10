@@ -20,7 +20,7 @@ const Services = () => {
       {/* Scroll to top button */}
       <button
   onClick={scrollToTop}
-  className="fixed bottom-8 right-8 bg-[#1A0B5B] hover:bg-[#fb2e86] opacity-100 text-white p-4 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-700"
+  className="fixed bottom-8 right-8 bg-[#1A0B5B] hover:bg-[#fb2e86] opacity-100 text-white p-4 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-700 z-[999]"
 >
   <FiArrowUp size={24} />
 </button>

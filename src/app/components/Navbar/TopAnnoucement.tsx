@@ -64,19 +64,19 @@ const TopAnnouncement = () => {
           </div>
   
           {/* Login Link */}
-          <Link href="/login" className="flex items-center gap-1 hover:text-gray-200">
+          <Link href="/pages/login" className="flex items-center gap-1 hover:text-gray-200">
             <span>Login</span>
             <IoPersonOutline />
           </Link>
   
           {/* Wishlist Link */}
-          <Link href="/wishlist" className="flex items-center gap-1 hover:text-gray-200">
+          <Link href="/pages/wishlist" className="flex items-center gap-1 hover:text-gray-200">
             <span>Wishlist</span>
             <IoHeartOutline />
           </Link>
   
           {/* Cart Link */}
-          <Link href="/cart" className="flex items-center gap-1 hover:text-gray-200 ml-2">
+          <Link href="/pages/cart" className="flex items-center gap-1 hover:text-gray-200 ml-2">
             <IoCartOutline className='w-5 h-5' />
           </Link>
         </div>

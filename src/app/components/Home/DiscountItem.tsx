@@ -21,7 +21,7 @@ const DiscountItem = () => {
       subHeading: 'Eams Sofa Compact',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur, nisl nec ultricies lacinia, nisl nisl aliquet nisl, nec aliquam nisl nisl sit amet nisl.',
-      features: ['it is a sofa', 'it is a chair', 'it is a table', 'it is a bed'],
+      features: ['it is a sofa , chair & so comfortable', 'it is a well designed sofa ', 'it is so light weight ', 'it is to be used in any room'],
     },
     {
       imageSrc: '/s10r.png',
@@ -30,7 +30,7 @@ const DiscountItem = () => {
       subHeading: 'Plastic Chair',
       description:
         'Sed consectetur, nisl nec ultricies lacinia, nisl nisl aliquet nisl, nec aliquam nisl nisl sit amet nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      features: ['Feature A', 'Feature B', 'Feature C', 'Feature D'],
+      features: ['Feature A is that it is a plastic chair ', 'Feature B is to be used in any room', 'Feature C is that it is very easy to move', 'Feature D is that it is a plastic chair'],
     },
     {
       imageSrc: '/s14.jpeg',
@@ -39,7 +39,7 @@ const DiscountItem = () => {
       subHeading: 'Sofa Collection',
       description:
         'Nisl nisl aliquet nisl, nec aliquam nisl nisl sit amet nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur, nisl nec ultricies lacinia.',
-      features: ['Feature X', 'Feature Y', 'Feature Z', 'Feature W'],
+      features: ['Feature X is that it is a sofa collection', 'Feature Y is to be used in any room', 'Feature Z is that it is very easy to move', 'Feature W is that it is a sofa collection'],
     },
   ];
 
@@ -55,7 +55,7 @@ const DiscountItem = () => {
           <button
             key={index}
             onClick={() => setActiveSlide(index)}
-            className={`text-sm sm:text-base z-[999] md:text-lg lg:text-xl font-semibold relative ${
+            className={`text-sm sm:text-base z-[999] md:text-lg lg:text-xl font- relative ${
               activeSlide === index
                 ? 'text-[#FB2E86] underline'
                 : 'text-black/60'
@@ -63,7 +63,7 @@ const DiscountItem = () => {
           >
             {index === 0 ? 'Wood Chair' : index === 1 ? 'Plastic Chair' : 'Sofa Collection'}
             {activeSlide === index && (
-              <span className="absolute -right-3 bottom-0 text-[#FB2E86] z-[999] text-lg sm:text-xl">
+              <span className="absolute w-2 md:mt-3 ml-1 h-2 rounded-full bg-[#FB2E86] z-[999] text-lg sm:text-xl">
                 
               </span>
             )}
@@ -90,20 +90,20 @@ const DiscountItem = () => {
         key={index}
         className="flex flex-col items-center md:items-start text-center md:text-left mt-16"
       >
-        <h3 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#151875] mb-2 capitalize">
+        <h3 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#151875] mb-2 capitalize">
           {slide.heading}
         </h3>
-        <p className="text-[#FB2E86] text-base sm:text-lg md:text-xl font-semibold py-2 mb-4">
+        <p className="text-[#FB2E86] text-lg sm:text-xl md:text-2xl font-semibold py-2 mb-4">
           {slide.subHeading}
         </p>
-        <p className="mb-6 text-gray-500 text-sm sm:text-base md:text-lg">
+        <p className="mb-6 text-gray-400 text-base sm:text-lg md:text-xl">
           {slide.description}
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 ">
           {slide.features.map((feature, index) => (
             <div key={index} className="flex items-center">
-              <FiCheck className="mr-2 text-gray-500" />
-              <span className="text-gray-500 text-sm sm:text-base md:text-lg">{feature}</span>
+              <FiCheck className="mr-2 text-gray-700 text-2xl" />
+              <span className="text-gray-400 text-base sm:text-lg md:text-xl">{feature}</span>
             </div>
           ))}
         </div>
@@ -117,13 +117,13 @@ const DiscountItem = () => {
     </div>
   
     {/* Image Section */}
-    <div className="md:w-1/2 p-4 mt-10 md:mt-16">
+    <div className="md:w-1/2 p-4 mt-11 md:mt-48 ">
       <Image
         src={slides[activeSlide].imageSrc}
         alt={slides[activeSlide].imageAlt}
         width={700}
         height={597}
-        className="w-full h-auto object-cover rounded-lg"
+        className="w-auto h-auto object-cover rounded-lg"
       />
     </div>
   </div>
