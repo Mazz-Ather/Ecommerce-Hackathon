@@ -194,8 +194,9 @@ const FeaturedProduct = () => {
                         }}
                         showText={false}
                         selectedColor={selectedColors[product._id]}
-                      />
+                        />
                     </div>
+
 
                     <div className="p-2 bg-white rounded-full hover:bg-[#2F1AC4] hover:text-white text-[#2F1AC4] transition-colors duration-100 ease-linear w-10 h-10 flex justify-center items-center">
                       <WishlistButton

@@ -35,7 +35,11 @@ const cartSlice = createSlice({
   reducers: {
     addToCart(state, action: PayloadAction<CartItem>) {
       const newItem = action.payload;
-    
+      if (!newItem || !newItem._id) {
+        console.error('Invalid item data:', newItem);
+        return;
+      }
+      
       // Initialize stock if not already present
       if (state.stock[newItem._id] === undefined) {
         state.stock[newItem._id] = newItem.stock;
@@ -43,6 +47,11 @@ const cartSlice = createSlice({
     
       const existingItem = state.items.find((item) => item._id === newItem._id);
     
+  // Debugging logs
+  console.log('New Item Payload:', newItem);
+  console.log('State Stock:', state.stock);
+  console.log('Existing Item:', existingItem);
+
       if (existingItem) {
         if (state.stock[newItem._id] > 0) {
           existingItem.quantity += 1;

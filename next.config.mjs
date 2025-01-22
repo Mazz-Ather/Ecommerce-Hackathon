@@ -2,11 +2,18 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-      domains: ['cdn.sanity.io'],
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'cdn.sanity.io',
+          pathname: '/**', // Allows all paths under this domain
+        },
+      ],
     },
-    experimental: {
-      appDir: true,
-    },
+    
+    // experimental: {
+      // appDir: true,
+    // },
 };
 
 export default nextConfig;
