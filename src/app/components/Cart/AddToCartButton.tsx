@@ -47,7 +47,7 @@ if (product.stock === undefined) {
       totalQuantity: 1,
     };
 
-    // dispatch(addToCart(productWithQuantity));
+    dispatch(addToCart(productWithQuantity)); 
     setCurrentStock((prevStock) => prevStock - 1); // Reduce stock dynamically
 
     toast.success(

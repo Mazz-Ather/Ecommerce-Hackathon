@@ -1,3 +1,4 @@
+// redux/cartSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { saveCartToLocalStorage, loadCartFromLocalStorage, saveWishlistToLocalStorage, loadWishlistFromLocalStorage } from './localStorage';
 
@@ -39,18 +40,16 @@ const cartSlice = createSlice({
         console.error('Invalid item data:', newItem);
         return;
       }
-      
+
       // Initialize stock if not already present
-      if (state.stock[newItem._id] === undefined) {
-        state.stock[newItem._id] = newItem.stock;
-      }
-    
+     
+  // Initialize stock if not already present
+  if (state.stock[newItem._id] === undefined) {
+    state.stock[newItem._id] = newItem.stock;
+  }
+
       const existingItem = state.items.find((item) => item._id === newItem._id);
-    
-  // Debugging logs
-  console.log('New Item Payload:', newItem);
-  console.log('State Stock:', state.stock);
-  console.log('Existing Item:', existingItem);
+      console.log('State Stock:', JSON.parse(JSON.stringify(state.stock)));
 
       if (existingItem) {
         if (state.stock[newItem._id] > 0) {
