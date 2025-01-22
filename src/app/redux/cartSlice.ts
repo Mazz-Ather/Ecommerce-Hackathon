@@ -37,44 +37,29 @@ const cartSlice = createSlice({
     addToCart: (state, action: PayloadAction<CartItem>) => {
       const newItem = action.payload;
     
+      // Check if the new item has a valid _id
       if (!newItem || !newItem._id) {
         console.error('Invalid item data:', newItem);
         return;
       }
     
-      // Ensure stock is always defined to avoid errors.
-      if (state.stock === undefined) {
-        state.stock = {};
-      }
-    
-      // If stock is not available, set stock to a default value
-      const stock = state.stock[newItem._id] ?? 0;
-      
       const existingItem = state.items.find((item) => item._id === newItem._id);
     
       if (existingItem) {
-        // If item exists and stock is greater than zero, update quantity
-        if (stock > 0) {
-          existingItem.quantity += 1;
-          state.totalQuantity += 1;
-          state.stock[newItem._id] -= 1;
-        } else {
-          console.log('Out of stock for:', newItem._id);
-        }
+        // Item exists in the cart, increase quantity by 1
+        existingItem.quantity += 1;
+        state.totalQuantity += 1;
       } else {
-        // For new items, add to the cart regardless of stock
+        // Item doesn't exist in the cart, add it as a new item
         state.items.push({ ...newItem, quantity: 1 });
         state.totalQuantity += 1;
-        state.stock[newItem._id] = stock > 0 ? stock - 1 : 0;  // Set stock to 0 if out of stock
       }
     
-      // Log stock state to check if the stock changes as expected
-      console.log('Updated Stock:', state.stock);
-    }
+      console.log('Updated Cart:', state.items);
+    },
+     
     
     
-    ,
-
     // Wishlist functionality
     addToWishlist(state, action: PayloadAction<CartItem>) {
       const newItem = action.payload;
@@ -115,23 +100,23 @@ const cartSlice = createSlice({
       }
     },
 
-    // Cart modification actions...
     increaseQuantity(state, action: PayloadAction<string>) {
       const _id = action.payload;
       const existingItem = state.items.find((item) => item._id === _id);
-      const availableStock = state.stock[_id] ?? 0;
-      const originalStock = state.originalStock[_id];
-
-      if (existingItem && availableStock > 0) {
+      
+      // Log to check if the item exists in the cart
+      console.log("Existing Item:", existingItem);
+    
+      if (existingItem) {
+        // Increase the quantity by 1
         existingItem.quantity += 1;
         state.totalQuantity += 1;
-        state.stock[_id] -= 1;
-
-        if (!existingItem.isStockDoubled && availableStock === Math.floor(originalStock / 2)) {
-          existingItem.isStockDoubled = true;
-        }
+      } else {
+        console.log('Item not found in cart.');
       }
-    },
+    }
+    
+    ,
 
     decreaseQuantity(state, action: PayloadAction<string>) {
       const _id = action.payload;
