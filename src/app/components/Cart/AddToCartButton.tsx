@@ -22,13 +22,16 @@ const AddToCartButton = ({ showText, product, selectedColor }: AddToCartButtonPr
   const dispatch = useDispatch();
   const [currentStock, setCurrentStock] = useState(product.stock ?? 0);
 
-if (product.stock === undefined) {
-  console.warn('Stock information is missing for product:', product);
-}
+  if (product.stock === undefined) {
+    console.warn('Stock information is missing for product:', product);
+  }
 
   const isOutOfStock = currentStock <= 0;
 
   const handleAddToCart = () => {
+    const currentStock = product.stock ?? 0; // Default to 0 if undefined
+    const isOutOfStock = currentStock <= 0;
+
     if (isOutOfStock) {
       toast.error('Sorry, this product is out of stock!');
       return;
@@ -42,13 +45,16 @@ if (product.stock === undefined) {
       size: product.size || '',
       productName: product.productName || '',
       price: product.price || 0,
-      stock: currentStock,
+      stock: currentStock || 0,
       _id: product._id || '',
       totalQuantity: 1,
     };
 
-    dispatch(addToCart(productWithQuantity)); 
-    setCurrentStock((prevStock) => prevStock - 1); // Reduce stock dynamically
+    // Dispatch the action to add to cart
+    dispatch(addToCart(productWithQuantity));
+
+    // Update stock locally (decrease by 1)
+    setCurrentStock((prevStock) => prevStock - 1);
 
     toast.success(
       <div className="flex items-center space-x-4">
@@ -70,15 +76,13 @@ if (product.stock === undefined) {
   };
 
   return (
-    <div className="flex items-center justify-between p-4 ">
+    <div className="flex items-center justify-between p-4">
       {/* Add to Cart Button */}
       <button
         onClick={handleAddToCart}
         disabled={isOutOfStock}
         className={`px-4 py-2 rounded-md transition-colors duration-200 ${
-          isOutOfStock
-            ? 'text-gray-600 cursor-not-allowed'
-            : 'text-indigo-500 hover:text-white'
+          isOutOfStock ? 'text-gray-600 cursor-not-allowed' : 'text-indigo-500 hover:text-white'
         }`}
       >
         {showText ? (

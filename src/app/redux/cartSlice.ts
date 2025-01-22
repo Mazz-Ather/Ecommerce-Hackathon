@@ -34,39 +34,46 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addToCart(state, action: PayloadAction<CartItem>) {
+    addToCart: (state, action: PayloadAction<CartItem>) => {
       const newItem = action.payload;
+    
       if (!newItem || !newItem._id) {
         console.error('Invalid item data:', newItem);
         return;
       }
-
-      // Initialize stock if not already present
-     
-  // Initialize stock if not already present
-  if (state.stock[newItem._id] === undefined) {
-    state.stock[newItem._id] = newItem.stock;
-  }
-
+    
+      // Ensure stock is always defined to avoid errors.
+      if (state.stock === undefined) {
+        state.stock = {};
+      }
+    
+      // If stock is not available, set stock to a default value
+      const stock = state.stock[newItem._id] ?? 0;
+      
       const existingItem = state.items.find((item) => item._id === newItem._id);
-      console.log('State Stock:', JSON.parse(JSON.stringify(state.stock)));
-
+    
       if (existingItem) {
-        if (state.stock[newItem._id] > 0) {
+        // If item exists and stock is greater than zero, update quantity
+        if (stock > 0) {
           existingItem.quantity += 1;
           state.totalQuantity += 1;
           state.stock[newItem._id] -= 1;
         } else {
           console.log('Out of stock for:', newItem._id);
         }
-      } else if (state.stock[newItem._id] > 0) {
+      } else {
+        // For new items, add to the cart regardless of stock
         state.items.push({ ...newItem, quantity: 1 });
         state.totalQuantity += 1;
-        state.stock[newItem._id] -= 1;
-      } else {
-        console.log('Out of stock for:', newItem._id);
+        state.stock[newItem._id] = stock > 0 ? stock - 1 : 0;  // Set stock to 0 if out of stock
       }
-    },
+    
+      // Log stock state to check if the stock changes as expected
+      console.log('Updated Stock:', state.stock);
+    }
+    
+    
+    ,
 
     // Wishlist functionality
     addToWishlist(state, action: PayloadAction<CartItem>) {
