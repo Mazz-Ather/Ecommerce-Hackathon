@@ -1,24 +1,32 @@
-  import products from "@/app/discountItem/[id]/DataProduct"; 
-  import { notFound } from "next/navigation";
-  import ProductDetails from "@/app/discountItem/[id]/ProductDetails"; 
+import products from "@/app/discountItem/[id]/DataProducts";
+import { notFound } from "next/navigation";
+import ProductDetails from "@/app/discountItem/[id]/ProductDetails";
 
-  interface ProductPageProps {
-    params: { id: string };   
-  }
-  export async function generateStaticParams() {
+// Define the expected structure for the props
+interface ProductPageProps {
+  params: { id: string };
+}
+
+// Define `generateStaticParams` for Next.js dynamic routing
+export async function generateStaticParams() {
     return products.map((product: any) => ({
-      id: product.id.toString(),
+      params: { id: product.id.toString() }, // Ensure params is an object with `id`
     }));
   }
+  
 
+// The main page component
+export default function ProductPage({ params }: ProductPageProps) {
+  // Parse the ID from the params object (it's a string by default)
+  const productId = parseInt(params.id, 10);
+  // Find the product by ID
+  const product = products.find((p: any) => p.id === productId);
 
-  export default function ProductPage({ params }: ProductPageProps) {
-    const productId = parseInt(params.id, 10);
-    const product = products.find((p: any) => p.id === productId);
-
-    if (!product) {
-      notFound();
-    }
-
-    return <ProductDetails product={product} />;
+  // If the product doesn't exist, return a 404 page
+  if (!product) {
+    notFound();
   }
+
+  // Return the product details component with the found product
+  return <ProductDetails product={product} />;
+}

@@ -8,7 +8,7 @@ const Demo = () => {
     <div className='max-w-[1500px] mx-auto'>
 
 <Breadcrumb
-        mainHeading="Hekto Demo"
+        mainHeading="Regalia Seats Demo"
        />
 
         <div className='xl:container lg:px-[1.3rem] px-[.8rem] lg:flex justify-center gap-8 lg:mb-32'>

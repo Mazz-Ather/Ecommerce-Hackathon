@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Brand and Newsletter Section */}
           <div className="space-y-4 mt-6">
             <Link href="/" className="text-2xl font-bold dark:text-white">
-              Hekto
+            Regalia Seats
             </Link>
             <form className="flex flex-col sm:flex-row gap-2 justify-center md:justify-start">
               <Input

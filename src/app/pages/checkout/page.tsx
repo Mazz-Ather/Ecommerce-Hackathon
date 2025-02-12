@@ -4,20 +4,21 @@ import Link from 'next/link';
 import { FaCheck } from 'react-icons/fa';
 import Breadcrumb from '@/app/components/BreadCrumb';
 import Brands from '@/app/components/Home/brands';
+import Checkout from '@/app/checkout/Checkout';
 
 const Page = () => {
   return (
     <>
-    
-      <Breadcrumb
+        <Checkout/> 
+      {/* <Breadcrumb
         mainHeading="Order Completed"
         miniHeadings={['Home', 'pages', 'Order Completed']}
-      />
-    <div className="flex flex-col md:flex-row h-screen max-w-[1550px] mx-auto">
-      {/* Left Side: Mini Image */}
+        /> */}
+
+    {/* <div className="flex flex-col md:flex-row h-screen max-w-[1550px] mx-auto">
       <div className="flex-1 p-4 flex items-start justify-center mt-40 ml-11">
-        <Image
-          src="/con1.png" // Add the path to your mini image
+      <Image
+          src="/con1.png" 
           alt="Left Mini Image"
           width={100}
           height={100}
@@ -25,7 +26,6 @@ const Page = () => {
         />
       </div>
 
-      {/* Center Section: Main Content */}
       <div className="flex-2 p-4 flex flex-col items-center justify-center text-center">
         <div className="mb-6 bg-[#f1f0f0] rounded-full w-20 mt-2 h-20 flex items-center justify-center">
           <FaCheck size={54} className='text-pink-500 mb-4 text-center'/>
@@ -39,7 +39,6 @@ const Page = () => {
         </Link>
       </div>
 
-      {/* Right Side: Bottom Mini Image */}
       <div className="flex-1 p-4 flex items-end justify-center mb-11">
         <Image
           src="/con2.png" 
@@ -49,7 +48,7 @@ const Page = () => {
           className="object-contain"
         />
       </div>
-    </div>
+    </div> */}
   
         <Brands/>
     </>

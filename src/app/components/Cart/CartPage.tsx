@@ -2,6 +2,8 @@
 
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../redux/store';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
 import { increaseQuantity, decreaseQuantity } from '@/app/redux/cartSlice';
 
 import Link from 'next/link';
@@ -27,13 +29,17 @@ interface CartItem {
 }
 
 const CartPage = () => {
+  
   const isSmallScreen = useMediaQuery({ query: '(max-width: 640px)' });
-
+  
   const [hydrated, setHydrated] = useState(false);
   const cart = useSelector((state: RootState) => state.cart);
   const totalAmount = cart.items.reduce((acc: any, item: any) => acc + item.price * item.quantity, 0);
+  console.log(cart.items)
   const dispatch = useDispatch();
-
+  
+  const taxes = totalAmount / 10;
+  const finalAmount = totalAmount + taxes;
   useEffect(() => {
     setHydrated(true); // Ensure component is hydrated
   }, []);
@@ -52,6 +58,42 @@ const CartPage = () => {
   if (!hydrated) {
     return null; // Prevent rendering until hydration is complete
   }
+
+  const makePayment = async () => {
+    const stripe = await loadStripe("pk_test_...");
+    if (!stripe) {
+      console.error("Stripe failed to load.");
+      return;
+    }
+  
+    const body = { cartItems: cart.items }; // Ensure this matches what your server expects
+    const headers = { "Content-Type": "application/json" };
+    const apiURL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000' || "https://ecommerce-hackathon-mu.vercel.app";
+    
+    try {
+      const response = await fetch(`${apiURL}/api/create-checkout-session`, { // Ensure the correct endpoint
+        method: 'POST',
+        headers,
+        body: JSON.stringify(body),
+      });
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(`Failed to create checkout session: ${errorData.error}`);
+      }
+  
+      const session = await response.json();
+      const result = await stripe.redirectToCheckout({ sessionId: session.id });
+  
+      if (result.error) {
+        console.error(`Error redirecting to Stripe: ${result.error.message}`);
+      }
+    } catch (error) {
+      console.error("Payment error:", error); // Log the error object
+    }
+  };
+  
+
 
   return (
     <>
@@ -161,21 +203,35 @@ const CartPage = () => {
                 </div>
                 <div className='h-px w-full bg-gray-300' />
                 <div className="flex justify-between">
-                  <span>Total:</span>
-                  <span>${totalAmount.toFixed(2)}</span>
+                  <span>Taxes:</span>
+                  <span>${taxes}</span>
                 </div>
+                  <div className='h-px w-full bg-gray-300' />
+                <div className="flex justify-between">
+                  <span>Total:</span>
+                  <span>${finalAmount}</span>
+                </div>
+            
                 <div className='h-px w-full bg-gray-300' />
                 <div className="flex items-center">
                   <input type="checkbox" className="mr-2" />
                   <span>Agree to terms</span>
                 </div>
-                <button className="bg-green-500 text-white w-full py-2 mt-4">
-                  <Link href="/pages/checkout">Checkout</Link>
-                </button>
+                {/* <button > */}
+                <button
+// onClick={makePayment}
+className={`text-white ${finalAmount === 0 ?" bg-gray-400" : 'bg-green-600'}
+ p-2 rounded-sm w-full`}
+>
+  <Link href={'/pages/checkout'}>
+Pay ${finalAmount === 0 ? 0:finalAmount.toFixed(2)}
+  </Link>
+</button>
+  {/* </button> */}
               </div>
 
               {/* Shipping Info */}
-              <h2 className="text-xl text-center font-semibold text-[#1A0B5B] dark:text-white/70 -mb-10">Calculate Shipping</h2>
+              {/* <h2 className="text-xl text-center font-semibold text-[#1A0B5B] dark:text-white/70 -mb-10">Calculate Shipping</h2>
               <div className="border p-4 flex flex-col gap-4 bg-[#E8E6F1] dark:bg-white/10 rounded-lg w-full">
                 <div className="flex justify-between">
                   <input type="text" placeholder='Country' className='bg-[#E8E6F1] dark:bg-[#222224] p-2 w-full' />
@@ -192,7 +248,7 @@ const CartPage = () => {
                 <div className="flex items-center">
                   <button className='bg-pink-500 w-full text-white px-4 py-2'>Calculate Shipping</button>
                 </div>
-              </div>
+              </div> */}
             </div>
           )}
         </div>

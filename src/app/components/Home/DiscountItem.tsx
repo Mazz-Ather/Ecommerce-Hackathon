@@ -109,7 +109,7 @@ const DiscountItem = () => {
                 </div>
               ))}
             </div>
-            <Link href={`/discountItem/${slide.id}`}>
+            <Link href={`/`}>
               <button className="bg-[#FB2E86] text-white text-sm sm:text-base md:text-lg px-4 py-2 rounded-md">
                 Shop Now
               </button>

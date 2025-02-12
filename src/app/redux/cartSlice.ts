@@ -1,6 +1,7 @@
 // redux/cartSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { saveCartToLocalStorage, loadCartFromLocalStorage, saveWishlistToLocalStorage, loadWishlistFromLocalStorage } from './localStorage';
+import { Item } from '@radix-ui/react-dropdown-menu';
 
 interface CartItem {
   _id: string;
@@ -36,7 +37,7 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action: PayloadAction<CartItem>) => {
       const newItem = action.payload;
-    
+    console.log(Item)
       // Check if the new item has a valid _id
       if (!newItem || !newItem._id) {
         console.error('Invalid item data:', newItem);

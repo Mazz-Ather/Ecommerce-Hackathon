@@ -6,7 +6,7 @@ const ShippingInfo = () => {
     <div>
       <div className="md:mt-20 mt-8 max-w-[1400px] mx-auto px-4 md:px-8 lg:ml-16">
         <h3 className="text-[#151875] text-2xl font-semibold mb-3 mt-4 dark:text-white">
-          Hekto Demo
+        Regalia Seats Demo
         </h3>
         <nav className="flex flex-wrap items-center space-x-1 text-base text-gray-500">
           <Link href="/pages/cart" className="hover:text-gray-900 text-[#151875] font-semibold dark:text-white/70">

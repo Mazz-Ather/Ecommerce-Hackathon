@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FiChevronDown, FiSearch } from "react-icons/fi";
 import NavbarClient from './NavbarClient'; // Assuming NavbarClient is a component you are importing
+import CartIcon from '../Cart/CartIcon';
 import { ModeToggle } from "../Theme/ModeToggle";
 
 export default function Navbar() {
@@ -28,7 +29,7 @@ export default function Navbar() {
         {/* Logo Section */}
         <div className="flex justify-start">
           <Link href="/" className="font-bold text-xl tracking-tight">
-            <h1 className="text-[#0D0E43] dark:text-[#EAEAEA] text-2xl font-bold">HEKTO</h1>
+            <h1 className="text-[#0D0E43] dark:text-[#EAEAEA] text-2xl font-bold"> Regalia Seats</h1>
           </Link>
         </div>
 
@@ -108,7 +109,7 @@ export default function Navbar() {
         {/* Search and Hamburger Menu */}
         <div className="flex items-center gap-8 ml-auto">
           {/* Search Bar for Larger Screens */}
-          <div className="hidden lg:flex relative">
+          {/* <div className="hidden lg:flex relative">
             <input
               type="text"
               className="px-6 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fb2e86] text-[#0D0E43] text-base"
@@ -117,7 +118,14 @@ export default function Navbar() {
             <div className="absolute inset-y-0 right-0 flex items-center bg-[#fb2e86] text-white px-3 rounded-r-md hover:bg-[#e90b6b] cursor-pointer">
               <FiSearch />
             </div>
-          </div>
+          </div> */}
+
+           <Link href="/pages/cart" className="flex items-center gap-4 hover:text-gray-900 dark:hover:text-gray-200 mr-9">
+          
+            
+                <span className="text-[18px] mt-1 cursor-pointer">Cart</span>
+                <CartIcon />
+            </Link>
 
           {/* Hamburger Menu for Small Screens */}
 <ModeToggle />
